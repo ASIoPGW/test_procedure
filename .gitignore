@@ -2,8 +2,9 @@
 Chapters/*.aux
 Figures/KAGRA-logo-eps-converted-to.pdf
 *.pdf
+main.pdf
 *.out
 *.synctex.gz
 *.aux
 *.xml
-**DS_Store
+*.DS_Store
