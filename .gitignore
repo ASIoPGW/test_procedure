@@ -1,10 +1,10 @@
-*.log
-Chapters/*.aux
 Figures/KAGRA-logo-eps-converted-to.pdf
+*.log
 *.pdf
-main.pdf
 *.out
 *.synctex.gz
 *.aux
+*/*.aux
 *.xml
 *.DS_Store
+*/*.DS_Store
