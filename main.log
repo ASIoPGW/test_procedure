@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7-160201-2.6 (utf8.euc) (TeX Live 2016) (preloaded format=platex 2016.8.12)  27 DEC 2017 17:57
+This is e-pTeX, Version 3.14159265-p3.7-160201-2.6 (utf8.euc) (TeX Live 2016) (preloaded format=platex 2016.8.12)  27 DEC 2017 23:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1701,7 +1701,7 @@ File: english.lbx 2016/05/14 v3.4 biblatex localization (PK/JW/AB)
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 
-(./main.aux)
+(./main.aux (./Chapters/Chapter1.aux) (./Chapters/Chapter2.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 103.
@@ -1722,11 +1722,11 @@ LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 103.
 LaTeX Font Info:    ... okay on input line 103.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 103.
 LaTeX Font Info:    ... okay on input line 103.
- (I search kanjifont definition file: . . )
-(I search font definition file: . . . . . . . )
-LaTeX Font Info:    Try loading font information for T1+ppl on input line 103.
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/t1ppl.fd
+(I search kanjifont definition file: . . ) (I search font definition file: . .
+. . . . . )
+LaTeX Font Info:    Try loading font information for T1+ppl on input line 103.
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/t1ppl.fd
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
 )
 Now handling font encoding TS1 ...
@@ -1877,10 +1877,6 @@ LaTeX Info: Redefining \nameref on input line 103.
 \@outlinefile=\write5
 \openout5 = `main.out'.
 
-
-
-Package hyperref Warning: Rerun to get /PageLabels entry.
-
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
@@ -1891,6 +1887,7 @@ Package biblatex Info: Data encoding 'utf8' specified.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' not found.
+
 No file main.bbl.
 Package biblatex Info: Reference section=0 on input line 103.
 Package biblatex Info: Reference segment=0 on input line 103.
@@ -2004,33 +2001,22 @@ Package rerunfilecheck Warning: File `main.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
-(rerunfilecheck)             After:  4C72E2CC1D1E3A3852A8AF080C44136B;215.
+(rerunfilecheck)             Before: 33E418D9D818192C0DDC843977BA1F4C;361
+(rerunfilecheck)             After:  3D8CF5616DC3F3DB3DA07E5EB87EA8E1;479.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package biblatex Warning: Please (re)run BibTeX on the file(s):
-(biblatex)                main
-(biblatex)                and rerun LaTeX afterwards.
 
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 27914 strings out of 493693
- 590338 string characters out of 6149787
+ 27923 strings out of 493693
+ 590490 string characters out of 6149787
  805947 words of memory out of 5000000
- 31214 multiletter control sequences out of 15000+600000
+ 31219 multiletter control sequences out of 15000+600000
  29100 words of font info for 67 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 47i,19n,67p,10377b,1484s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 47i,19n,67p,10377b,1482s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.dvi (5 pages, 3880 bytes).
+Output written on main.dvi (5 pages, 4776 bytes).
