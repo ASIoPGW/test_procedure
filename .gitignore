@@ -1,0 +1,19 @@
+*.log
+Chapters/*.aux
+Figures/KAGRA-logo-eps-converted-to.pdf
+*.pdf
+<<<<<<< HEAD
+=======
+main.pdf
+>>>>>>> 3c12b296742ebfb498b63ad529b3a60e68a47351
+*.out
+*.synctex.gz
+*.aux
+*.xml
+<<<<<<< HEAD
+**DS_Store
+=======
+*.DS_Store
+>>>>>>> 3c12b296742ebfb498b63ad529b3a60e68a47351
+Chapters/Chapter1.aux
+main.pdf
