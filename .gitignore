@@ -1,25 +1,5 @@
-<<<<<<< HEAD
-*.log
-Chapters/*.aux
 Figures/KAGRA-logo-eps-converted-to.pdf
-*.pdf
-<<<<<<< HEAD
-=======
-main.pdf
->>>>>>> 3c12b296742ebfb498b63ad529b3a60e68a47351
-*.out
-*.synctex.gz
-*.aux
-*.xml
-<<<<<<< HEAD
-**DS_Store
-=======
-*.DS_Store
->>>>>>> 3c12b296742ebfb498b63ad529b3a60e68a47351
-Chapters/Chapter1.aux
-main.pdf
-=======
-Figures/KAGRA-logo-eps-converted-to.pdf
+*blx.bib
 *.log
 *.pdf
 *.out
@@ -29,4 +9,3 @@ Figures/KAGRA-logo-eps-converted-to.pdf
 *.xml
 *.DS_Store
 */*.DS_Store
->>>>>>> 42173c85c8c3ee6742c23aa7bf188f7f11c58268
