@@ -42,8 +42,12 @@ headsepline, % Uncomment to get a line under the header
 \usepackage[T1]{fontenc} % Output font encoding for international characters
 
 \usepackage{palatino} % Use the Palatino font by default
+\usepackage[outdir=./]{epstopdf}
+\epstopdfsetup{outdir=./}
 \usepackage{tabularx}
 \usepackage{multirow}
+\usepackage{verbatim} 
+\usepackage[outdir=./]{epstopdf}
 %\usepackage{hyperref}
 \usepackage[driverfallback=dvipdfmx]{hyperref}
 \usepackage{url}
@@ -59,7 +63,7 @@ bookmarksopen=true,colorlinks=true,citecolor=blue,linkcolor=blue,urlcolor=blue}
 %\AtEveryBibitem{\clearfield{eprint}}
 
 \usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
-
+\newcommand{\red}{\textcolor{red}}
 
 %----------------------------------------------------------------------------------------
 %	MARGIN SETTINGS

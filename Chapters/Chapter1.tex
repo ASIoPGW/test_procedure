@@ -8,7 +8,7 @@
 
 \section{Introduction}
 \section{Electronic test}
-For the electronic tests, we test the performance of Optical Follower Servo chassis and Interface chassis using the test procedures from LIGO (DCC number T1400486-v2 and T1400484-v2).
+For the electronic tests, we test the performance of Optical Follower Servo chassis and Interface chassis using the test procedures from LIGO (DCC number T1400486-v2 and T1400484-v2), but change the expected value to the value we calculated.
 \subsection{Optical Follower Servo board test}
 \begin{enumerate}
 	\item \textbf{Overview}\\
@@ -66,22 +66,22 @@ For the electronic tests, we test the performance of Optical Follower Servo chas
 				\begin{tabular}{| c | c | c |}
 					\hline
 					\textbf{Output} & \textbf{Expected} & \textbf{Observed}\\ \hline
-					"PD Mon" BNC & 0dB +/- 0.5dB Flat & \\ \hline
-					"Err Mon" BNC & 0dB +/- 0.5dB Flat &  \\ \hline
-					“To/From PCal Interface” & 0dB +/- 0.5dB Flat & \\
+					"PD Mon" BNC & 0dB$\pm$0.5dB Flat & \\ \hline
+					"Err Mon" BNC & 0dB$\pm$0.5dB Flat &  \\ \hline
+					“To/From PCal Interface” & 0dB$\pm$0.5dB Flat & \\
 					Pins 6(+) and 14(-) & read differentially(A-B)  &\\ \hline
-					“To/From PCal Interface” & 0dB +/- 0.5dB Flat & \\
+					“To/From PCal Interface” & 0dB$\pm$0.5dB Flat & \\
 					Pins 7(+) and 15(-) & read differentially(A-B)  &\\ \hline
-					\multirow{2}{*}{“Out Mon” BNC} & -8.2dB at DC with 2 poles @ & \\
+					\multirow{2}{*}{“Out Mon” BNC} & -8.11dB at DC with 2 poles @ & \\
 					& 3KHz, and 1 zero @30KHz &\\ \hline
-					“Out Mon” BNC & -90º of phase at 3KHz +/- 2º &\\ \hline
-					\multirow{2}{*}{“Out Mon” BNC} & Rising to -125.5º of phase @   &\\ 
-					& 30KHz $\pm$ 2º & \\ \hline
-					\multirow{2}{*}{“To AOM” BNC} & -8.2dB at DC with 2 poles @ & \\
+					“Out Mon” BNC & -88.14º$\pm$2º  of phase at 3KHz&\\ \hline
+					\multirow{2}{*}{“Out Mon” BNC} & Rising to -125.93º$\pm$2º &\\ 
+					&of phase @ 30KHz& \\ \hline
+					\multirow{2}{*}{“To AOM” BNC} & -8.11dB at DC with 2 poles @ & \\
 					& 3KHz, and 1 zero @30KHz &\\ \hline
-					“To AOM” BNC & -90º of phase at 3KHz +/- 2º &\\ \hline
-					\multirow{2}{*}{“To AOM” BNC} & Rising to -125.5º of phase @   &\\ 
-					& 30KHz $\pm$ 2º & \\ 	
+					“To AOM” BNC & -88.142º$\pm$2º of phase at 3KHz &\\ \hline
+					\multirow{2}{*}{“To AOM” BNC} & Rising to -125.93º$\pm$2º &\\ 
+					&of phase @ 30KHz& \\ 	
 					\hline
 				\end{tabular}
 			}
@@ -94,10 +94,10 @@ For the electronic tests, we test the performance of Optical Follower Servo chas
 				\begin{tabular}{| c | c | c | c |}
 					\hline
 					\textbf{Input} & \textbf{Output} & \textbf{Expected} & \textbf{Observed}\\ \hline
-					“From DAC”  & \multirow{3}{*}{“To AOM” BNC} & -8.2dB at DC with 2 & \\
+					“From DAC”  & \multirow{3}{*}{“To AOM” BNC} & -8.11dB at DC with 2 & \\
 					connector Pins & & poles @ 3KHz, and 1 &\\
 					1(+) and 6(GND) & & zero@30KHz & \\ \hline
-					\multirow{3}{*}{“CLTF Test In” BNC}  & \multirow{3}{*}{“To AOM” BNC} & -8.2dB at DC with 2 & \\
+					\multirow{2}{*}{“CLTF Test In” BNC}  & \multirow{3}{*}{“To AOM” BNC} & -8.11dB at DC with 2 & \\
 					& & poles @ 3KHz, and 1 &\\
 					& & zero@30KHz & \\ 
 					\hline
@@ -144,9 +144,9 @@ For the electronic tests, we test the performance of Optical Follower Servo chas
 				\begin{tabular}{| c | c | c |}
 					\hline
 					\textbf{Input Frequency} & \textbf{Output Expected} & \textbf{Output Observed}\\ \hline
-					100Hz & & \\ \hline
-					1KHz &   &  \\ \hline
-					100KHz &  &  \\
+					100Hz & -0.79V$\pm$0.02V & \\ \hline
+					1KHz & -0.79V$\pm$0.02V &  \\ \hline
+					100KHz & -0.72V$\pm$0.02V &  \\
 					\hline
 				\end{tabular}
 			}
@@ -154,6 +154,210 @@ For the electronic tests, we test the performance of Optical Follower Servo chas
 	\end{enumerate}
 \end{enumerate}
 \subsection{Interface board test}
+\begin{enumerate}
+	\item \textbf{Overview}\\
+	The PCal Interface Chassis houses two PCal Interface Boards, and a PCal Interface Back Board. The function of this chassis is Interface the EtherCAT and fast controls and readbacks with the laser AOM and Power Supply chassis, Optical Follower servo, Access control, and several temperature sensors and photodiodes.
+	
+	\item \textbf{Test Equipment}
+	\begin{enumerate}
+		\item Power Supply capable of +/- 18V
+		\item Voltage Calibrator, or adjustable power supply
+		\item SR785 Network Analyzer, or equivalent
+		\item Dsub Breakout boards (9-pin, 15-pin, 37-pin)
+		\item Digital Multimeter (DMM)
+	\end{enumerate}
+	
+	\item \textbf{Electrical Tests}
+	\begin{enumerate}
+		\item Turn on the power supplies, and record the current in the table below.
+		\begin{center}
+			\resizebox{13cm}{!}{
+				\begin{tabular}{| c | c | c | c |}
+					\hline
+					\multirow{2}{*}{\textbf{Voltage}} & \multirow{2}{*}{\textbf{Current}}  & \multirow{2}{*}{\textbf{Observed Current}}  & \textbf{Front and Back panel,}\\
+					& & & \textbf{$\pm$15V LEDs on?}\\ \hline
+					+18V & 130mA$\pm$ 15mA &   & \\ \hline
+					-18V & 130mA$\pm$ 15mA &   & \\
+					\hline
+				\end{tabular}
+			}
+		\end{center}
+		
+		\item Continuity Checks
+		\begin{enumerate}
+			\item \textbf{Optical follower Continuity:}\\
+			Attach a 15-pin DSub Breakout board to the connector labled “To/From Optical Follower”, and a 9-pin Dsub Breakout to the connector labled “To Anti-Alias Chassis” and Check for continuity (any “No” answer is a fail):
+			\begin{center}
+				\resizebox{13cm}{!}{
+					\begin{tabular}{| c | c | c |}
+						\hline
+						\textbf{EtherCAT Pin} & \textbf{Optical Follower Pin} & \textbf{Continuous (Yes/No)?}\\ \hline
+						J2-Pin 1 & J4-Pin 1 & \\ \hline
+						J2-Pin 20 & J4-Pin 9  &  \\ \hline
+						J2-Pin 2 & J4-Pin 2  &  \\ \hline
+						J2-Pin 21 & J4-Pin 10  &  \\ \hline
+						J2-Pin 7 & J4-Pin 3  &  \\ \hline
+						J2-Pin 26 & J4-Pin 11  &  \\ \hline
+						J2-Pin 10 & J4-Pin 4  &  \\ \hline
+						J2-Pin 29 & J4-Pin 12  &  \\ 
+						\hline
+					\end{tabular}
+				}
+			\end{center}
+			\begin{center}
+				\resizebox{13cm}{!}{
+					\begin{tabular}{| c | c | c |}
+						\hline
+						\textbf{Anti-Alias Pin} & \textbf{Optical Follower Pin} & \textbf{Continuous (Yes/No)?}\\ \hline
+						J1-Pin 1 & J4-Pin 6 & \\ \hline
+						J1-Pin 6 & J4-Pin 14  & \\ \hline
+						J1-Pin 4 & J4-Pin 7  & \\ \hline
+						J1-Pin 9 &J4-Pin 15 & \\
+						\hline
+					\end{tabular}
+				}
+			\end{center}
+			\item \textbf{Laser Power and AOM Chassis Continuity:}\\
+			Attach a 15-pin DSub Breakout board to the connector labled “To/From Laser Power and AOM Chassis”, and a 37-pin Dsub Breakout board to the “To/From EtherCAT” connector on the back panel. Check continuity as below (any “No” answer is a fail):
+			\begin{center}
+				\resizebox{13cm}{!}{
+					\begin{tabular}{| c | c | c |}
+						\hline
+						\textbf{EtherCAT Pin} & \textbf{Laser Power and AOM Pin} & \textbf{Continuous (Yes/No)?}\\ \hline
+						J2-Pin 3 & J5-Pin 1  &  \\ \hline
+						J2-Pin 22 & J5-Pin 9  &  \\ \hline
+						J2-Pin 31 & J5-Pin 2  &  \\ \hline
+						J2-Pin 29 & J5-Pin 10  &  \\ \hline
+						J2-Pin 29 & J5-Pin 11  &  \\ \hline
+						J2-Pin 29 & J5-Pin 12  &  \\ 
+						\hline
+					\end{tabular}
+				}
+			\end{center}
+			\item \textbf{Access Control Continuity:}\\
+			Using two 9-pin DSub Breakout boards, or other effective method, short together Pins 2$\&$7 of both the Rx and Tx Temp and Interlock connectors on the front panel. Once this is done, Pins 1$\&$6 on the back panel “To Access Control” connector should be shorted together. Disconnecting either front panel connector should break the short.\\
+			Operation as stated above? (Yes/No)\underline{\qquad\qquad}
+			\item \textbf{WSPD Continuity:}\\
+			With the WSPDA and WSPDB Jumpers still in the “WSPD” position, Check continuity from the front panel WS PD connector to the EtherCAT connector:
+			\begin{center}
+				\resizebox{13cm}{!}{
+					\begin{tabular}{| c | c | c |}
+						\hline
+						\textbf{EtherCAT Pin} & \textbf{WS PD Pin} & \textbf{Continuous (Yes/No)?}\\ \hline
+						J2-Pin 4 & J7-Pin 1  &  \\ \hline
+						J2-Pin 23 & J7-Pin 6  &  \\ 
+						\hline
+					\end{tabular}
+				}
+			\end{center}
+		\end{enumerate}
+		\item \textbf{Relay Functions:}\\
+		Verify that Pins 11 and 12 on the EtherCAT connector read +15V with respect to Pin 29 (GND).\\
+		Pin 11 +15V?\underline{\qquad\qquad}\\
+		Pin 12 +15V?\underline{\qquad\qquad}\\
+		Using a clip lead, tie EtherCAT Pin 11 (+15V) to Pin 13 (Beckhoff remote GND). Next clip a long clip lead to pin 12 (+15V), and use this to actuate the relays in the table below. In cells that call out Local/Remote switch position, verify that the switch is in that position. Look for the appropriate signal (and LED lighting, where appropriate), and record the results in the table below:
+		\begin{center}
+			\resizebox{13cm}{!}{
+				\begin{tabular}{| c | c | c | c | c |}
+					\hline
+					\textbf{Pin to connect with Pin 12} & \textbf{Switch positions} & \textbf{Readout pin} & \textbf{Expected signal} & \textbf{Signal present (Yes/No)?}\\ \hline
+					\multirow{2}{*}{“To Shutter” Pin 6} & \multirow{2}{*}{Remote} & \multirow{2}{*}{“EtherCAT” Pin 32} & +15V$\pm$0.5V,  & \\
+					& & & “Open” LED lit & \\ \hline 
+					\multirow{2}{*}{“To Shutter” Pin 5} & \multirow{2}{*}{Remote} & \multirow{2}{*}{“EtherCAT” Pin 14} & +15V$\pm$0.5V, & \\ 
+					& & & “Closed” LED lit & \\ \hline 
+					“Optical Follower” Pin 5 & Remote & “EtherCAT” Pin 33 & +15V$\pm$0.5V & \\ \hline 
+					“EtherCAT” Pin 30 & Remote & “To Shutter” Pin 1 & +15V$\pm$0.5V & \\ \hline 
+					“EtherCAT” Pin 30 & Remote & “To Shutter” Pin 3 & +15V$\pm$0.5V & \\ \hline 
+					“EtherCAT” Pin 30 & Local & “To Shutter” Pin 1 & +15V$\pm$0.5V & \\ \hline 
+					“EtherCAT” Pin 30 & Local & “To Shutter” Pin 3 & 0V“ & \\ \hline 
+					\multirow{2}{*}{“EtherCAT” Pin 30} & Local, pushing  & \multirow{2}{*}{“To Shutter” Pin 3} & \multirow{2}{*}{+15V$\pm$0.5V} & \\
+					& “Open” button & & & \\ \hline
+					\multirow{2}{*}{“EtherCAT” Pin 30} & Local, pushing  & \multirow{2}{*}{“To Shutter” Pin 1} & \multirow{2}{*}{0V} & \\ 
+					& “Close” button & & & \\
+					\hline
+				\end{tabular}
+			}
+		\end{center}
+		Disconnect both clip leads.
+		\item \textbf{Photodiode input tests:}
+		\begin{enumerate}
+			\item \textbf{Signal Tests:}\\
+			Using a network analyzer, apply a 5Vp-p, signal and sweep from 100Hz to 100KHz to the appropriate pins in the table below. Read out the signal differentially (A-B) for the Anti-Alias pins, and single-ended for the BNC monitors, and verify that the signal is correct across the entire frequency range:
+			\begin{center}
+				\resizebox{13cm}{!}{
+					\begin{tabular}{| c | c | c |}
+						\hline
+						\textbf{Input} & \textbf{Output Pins (Expected 0dB +/- 0.5dB)} & \textbf{Observed Output}\\ \hline
+						“Rx PD” Pins 1(+) and 6(-) & “To Anti-Alias” Pins 2(+) and 7(-)  &  \\ \hline
+						“Rx PD” Pins 1(+) and 6(-) & Rx PD Mon BNC & \\ \hline
+						“Tx PD” Pins 1(+) and 6(-) & “To Anti-Alias” Pins 3(+) and 8(-) & \\ \hline
+						“Tx PD” Pins 1(+) and 6(-) & Tx PD Mon BNC & \\ \hline
+						“WS PD” Pins 1(+) and 6(-) & “EtherCAT” Pins 4(+) and 23(-) & \\ \hline
+						“WS PD” Pins 1(+) and 6(-) & WS PD Mon BNC & \\
+						\hline
+					\end{tabular}
+				}
+			\end{center}
+			\item \textbf{Alternate WSPD Input Test:}\\
+			Now move the jumpers WSPDA and WSPDB from the “WSPD” position, to the Alt. WSPD position. Apply the above signal to the front panel “Alt. WSPD” BNC, and read out the signal in the appropriate places in the table below:
+			\begin{center}
+				\resizebox{13cm}{!}{
+					\begin{tabular}{| c | c | c |}
+						\hline
+						\textbf{Input} & \textbf{Output Pins (Expected 6dB +/- 0.5dB)} & \textbf{Observed Output}\\ \hline
+						“Alt. WSPD” BNC & “EtherCAT” Pins 4(+) and 23(-)“& \\ \hline
+						“Alt. WSPD” BNC & WS PD Mon BNC & \\
+						\hline
+					\end{tabular}
+				}
+			\end{center}
+			\item \textbf{Power to PD tests:}\\
+			The front panel connectors supply power to the remote photodiode boxes. These tests check to make sure the voltages are present.
+			\begin{center}
+				\resizebox{13cm}{!}{
+					\begin{tabular}{| c | c | c |}
+						\hline
+						\textbf{Pin} & \textbf{Expected Voltage} & \textbf{Observed Voltage}\\ \hline
+						“Rx PD” Pins 2(+) and 7(GND) & +15V +/- 0.5V & \\ \hline
+						“Rx PD” Pins 3(-) and 7(GND) & -15V +/- 0.5V & \\ \hline
+						“Tx PD” Pins 2(+) and 7(GND) & +15V +/- 0.5V & \\ \hline
+						“Tx PD” Pins 3(-) and 7(GND) & -15V +/- 0.5V & \\ \hline
+						“WS PD” Pins 2(+) and 7(GND) & +15V +/- 0.5V & \\ \hline
+						“WS PD” Pins 3(-) and 7(GND) & -15V +/- 0.5V & \\ 
+						\hline
+					\end{tabular}
+				}
+			\end{center}
+		\end{enumerate}
+		\item \textbf{Laser Diode Current and Temperature Tests:}
+		Using a network analyzer, apply a 1Vp-p, signal and sweep from 100Hz to 100KHz to the appropriate pins in the table below. Read out the signal differentially (A-B) for the Anti-Alias pins, and verify that the signal is correct across the entire frequency range:
+		\begin{center}
+			\resizebox{13cm}{!}{
+				\begin{tabular}{| c | c | c |}
+					\hline
+					\textbf{Input} & \textbf{Output Pins (Expected 6dB +/- 0.5dB)} & \textbf{Observed Output}\\ \hline
+					“Laser Power and AOM” Pin 3(+) and 11(-) & “EtherCAT” Pins 8(+) and 27(-) & \\ \hline
+					“Laser Power and AOM” Pin 4(+) and 12(-) & “EtherCAT” Pins 9(+) and 28(-) & \\
+					\hline
+				\end{tabular}
+			}
+		\end{center}
+		\item \textbf{Temperature Sensor tests:}\\
+		Set up the Voltage Calibrator to output current, and connect the ground lead to Pin 2 of the “To Shutter” connector (Board GND). Apply 1mA onto the appropriate pins, and read out the signal using a DMM as per the table below:
+		\begin{center}
+			\resizebox{13cm}{!}{
+				\begin{tabular}{| c | c | c | c |}
+					\hline
+					\textbf{Input Pins} & \textbf{Output Pins} & \textbf{Expected Output} & \textbf{Observed Output}\\ \hline
+					“Tx Temp. and Interlock” Pin 6 & “EtherCAT” Pins 5(+) and 24(-) & 20V +/- 0.1V & \\ \hline
+					“Rx Temp. and Interlock” Pin 6 & “EtherCAT” Pins 6(+) and 25(-) & 20V +/- 0.1V & \\
+					\hline
+				\end{tabular}
+			}
+		\end{center}
+		Move the jumpers WSPDA and WSPDB back to the “WSPD” position.
+	\end{enumerate}
+\end{enumerate}
 \section{Optical test}
 \subsection{Mode matching and beam quality}
 \section{Transfer function measurement}
