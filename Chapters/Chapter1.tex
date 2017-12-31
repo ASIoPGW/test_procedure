@@ -7,7 +7,153 @@
 %----------------------------------------------------------------------------------------
 
 \section{Introduction}
-\section{Electronics test}
+\section{Electronic test}
+For the electronic tests, we test the performance of Optical Follower Servo chassis and Interface chassis using the test procedures from LIGO (DCC number T1400486-v2 and T1400484-v2).
+\subsection{Optical Follower Servo board test}
+\begin{enumerate}
+	\item \textbf{Overview}\\
+	The PCal Optical Follower Servo Chassis includes two Optical Follower Servo Boards, and two Optical Follower Back Board. The function of this chassis is to drive two AOMs with a whatever voltage is necessary in order to make the light coming out of the AOM match the sinusoidal shape of the excitation signal.
+	\item \textbf{Test Equipment}
+	\begin{enumerate}
+		\item Power Supply capable of ~$\pm$18V,~2A
+		\item Digital Multimeter (DMM)
+		\item Power Supply
+		\item Oscilloscope
+		\item Function Generator
+		\item Spectrum analyzer
+	\end{enumerate}
+	
+	\item \textbf{DC test}\\
+	\begin{enumerate}
+		\item Turn on the power supply and the switches, and check the LED status below:
+		\begin{center}
+			\resizebox{13cm}{!}{
+				\begin{tabular}{| c | c | c | c |}
+					\hline
+					\multirow{2}{*}{\textbf{Voltage}} & \multirow{2}{*}{\textbf{Current}}  & \multirow{2}{*}{\textbf{Observed Current}}  & \textbf{Front Panel LEDs On,}\\
+					& & & \textbf{$\pm$15V and $\pm$12V?}\\ \hline
+					+18V & 20mA$\pm$ 5mA &   & \\ \hline
+					-18V & 19mA$\pm$ 5mA &   & \\
+					\hline
+				\end{tabular}
+			}
+		\end{center}
+		\item Attach a standard 9-pin breakout board to the D-sub labeled “From PCal PD”. With a DMM, check the voltages on the pins in the table below:
+		\begin{center}
+			\resizebox{13cm}{!}{
+				\begin{tabular}{| c | c | c |}
+					\hline
+					\textbf{Pins} & \textbf{Voltage Expected} & \textbf{Voltage Observed}\\ \hline
+					J1 Pin2(+) and 7(GND) & +15V$\pm$ 0.5V & \\ \hline
+					J1 Pin 3(-) and 7(GND) & -15V$\pm$ 0.5V &  \\
+					\hline
+				\end{tabular}
+			}
+		\end{center}
+		
+		\item \textbf{Loop Switch test:}\\
+		Attach a 15-pin D-sub Breakout board to the “To/From PCal Interface” connector, and short together pins 4$\&$12. Read the voltage at pins 5(+) and 12(GND). You should read +12V $\pm$ 0.5V. At the same time, the green front panel LED labeled “Loop Closed” should illuminate.\\
+		+12V present on pin 5?\underline{\qquad\qquad}\\
+		“Loop Closed” LED lit?\underline{\qquad\qquad}\\
+		
+	\end{enumerate}
+	\item \textbf{Functional Tests}
+	\begin{enumerate}
+		\item \textbf{PD Signal Tests:}\\
+		PD Signal Tests: With the short for the loop switch still in place, it is possible to test the various signal outputs of the servo electronics. Using a voltage calibrator, put a negative (-) 4.8V level on the servo gain channel (From PCal Interface connector, Pin 1(-4.8V) and Pin 9 (GND)). This should give a gain of 1 (0dB) from the variable Gain amplifier. Input a 100mV signal from the network analyzer into the “From PCal PD” connector Pin 1(+) and Pin 6(-), and sweep from 100Hz to 100KHz. Measure the signals, and fill in the table below:
+		\begin{center}
+			\resizebox{13cm}{!}{
+				\begin{tabular}{| c | c | c |}
+					\hline
+					\textbf{Output} & \textbf{Expected} & \textbf{Observed}\\ \hline
+					"PD Mon" BNC & 0dB +/- 0.5dB Flat & \\ \hline
+					"Err Mon" BNC & 0dB +/- 0.5dB Flat &  \\ \hline
+					“To/From PCal Interface” & 0dB +/- 0.5dB Flat & \\
+					Pins 6(+) and 14(-) & read differentially(A-B)  &\\ \hline
+					“To/From PCal Interface” & 0dB +/- 0.5dB Flat & \\
+					Pins 7(+) and 15(-) & read differentially(A-B)  &\\ \hline
+					\multirow{2}{*}{“Out Mon” BNC} & -8.2dB at DC with 2 poles @ & \\
+					& 3KHz, and 1 zero @30KHz &\\ \hline
+					“Out Mon” BNC & -90º of phase at 3KHz +/- 2º &\\ \hline
+					\multirow{2}{*}{“Out Mon” BNC} & Rising to -125.5º of phase @   &\\ 
+					& 30KHz $\pm$ 2º & \\ \hline
+					\multirow{2}{*}{“To AOM” BNC} & -8.2dB at DC with 2 poles @ & \\
+					& 3KHz, and 1 zero @30KHz &\\ \hline
+					“To AOM” BNC & -90º of phase at 3KHz +/- 2º &\\ \hline
+					\multirow{2}{*}{“To AOM” BNC} & Rising to -125.5º of phase @   &\\ 
+					& 30KHz $\pm$ 2º & \\ 	
+					\hline
+				\end{tabular}
+			}
+		\end{center}
+		
+		\item \textbf{Excitation Signal test:} \\
+		Move the input signal to the appropriate connector below, and read from the “To AOM” BNC. Record the results in the table below:
+		\begin{center}
+			\resizebox{13cm}{!}{
+				\begin{tabular}{| c | c | c | c |}
+					\hline
+					\textbf{Input} & \textbf{Output} & \textbf{Expected} & \textbf{Observed}\\ \hline
+					“From DAC”  & \multirow{3}{*}{“To AOM” BNC} & -8.2dB at DC with 2 & \\
+					connector Pins & & poles @ 3KHz, and 1 &\\
+					1(+) and 6(GND) & & zero@30KHz & \\ \hline
+					\multirow{3}{*}{“CLTF Test In” BNC}  & \multirow{3}{*}{“To AOM” BNC} & -8.2dB at DC with 2 & \\
+					& & poles @ 3KHz, and 1 &\\
+					& & zero@30KHz & \\ 
+					\hline
+				\end{tabular}
+			}
+		\end{center}
+		\item \textbf{Gain tests:} \\
+		With the sine wave generator, input an appropriate amplitude 500Hz sine wave into the “From PCal PD” connector, Pins 1(+) and 6(-) Watch the output signal on the “To AOM” BNC connector on an oscilloscope. Vary the gain voltage level from the voltage calibrator from negative (-)9.6V to positive(+)9.6V (From PCal Interface connector, Pin 1(-4.8V) and Pin 9 (GND)). The visible gain should vary from 0.143V/V to 124 V/V (-14dB to 46dB), Record the results in the table below, either by measuring the p-p signal with cursors, or getting the RMS amplitude from the scope’s “measure” function:
+		\begin{center}
+			\resizebox{13cm}{!}{
+				\begin{tabular}{| c | c | c | c |}
+					\hline
+					\textbf{Input signal level} & \textbf{Input Gain Level} & \multirow{3}{*}{\textbf{Expected Output}} & \multirow{3}{*}{\textbf{Observed Output}}\\
+					\textbf{“From PCal PD” }& \textbf{“To/From PCal Interface”} & & \\
+					\textbf{1(+) and 6(-)} & \textbf{Pin1 and Pin 9(GND)} & & \\ \hline
+					\multirow{2}{*}{1$\mbox{V}_{\mbox{p-p}}$}  & \multirow{2}{*}{-9.6V} & 143 $\mbox{mV}_{\mbox{p-p}}$ $\pm$ 10mV& \\
+					& &  or 55 $\mbox{mV}_{\mbox{rms}}$ $\pm$ 10mV &\\ \hline
+					\multirow{2}{*}{1$\mbox{V}_{\mbox{p-p}}$}  & \multirow{2}{*}{0V} & 4.12 $\mbox{V}_{\mbox{p-p}}$ $\pm$ 100mV& \\
+					& &  or 1.48 $\mbox{mV}_{\mbox{rms}}$ $\pm$ 10mV &\\ \hline
+					\multirow{2}{*}{0.03$\mbox{V}_{\mbox{p-p}}$}  & \multirow{2}{*}{+9.6V} & 3.72 $\mbox{mV}_{\mbox{p-p}}$ $\pm$ 10mV& \\
+					& &  or 1.43 $\mbox{mV}_{\mbox{rms}}$ $\pm$ 10mV &\\ 
+					\hline
+				\end{tabular}
+			}
+		\end{center}
+		
+		\item \textbf{Offset Input Test:}\\
+		With the gain level set to negative (-)1V, Input a 0.1Vp-p, 500Hz Sine wave into the “From PCal PD” connector, Pins 1(+) and 6(-). Next, put a voltage level into the Offset channel, “To/From PCal Interface, Pins 2(+) and 10(-). There should be a gain of ~4.4V/V offset on the observed sine wave on the oscilloscope. Verify this in the table below:
+		\begin{center}
+			\resizebox{13cm}{!}{
+				\begin{tabular}{| c | c | c |}
+					\hline
+					\textbf{Offset Input} & \textbf{Offset Expected} & \textbf{Offset Observed}\\ \hline
+					0V & 0V$\pm$ 0.2V & \\ \hline
+					1V &  1.5V$\pm$ 0.2V &  \\ \hline
+					2V & 3V$\pm$ 0.2V &  \\
+					\hline
+				\end{tabular}
+			}
+		\end{center}
+		\item \textbf{Oscillation Monitor tests:}\\ Put a negative (-) 4.8V level on the servo gain channel (From PCal Interface connector, Pin 1(-4.8V) and Pin 9 (GND)). Place a 1Vp-p, sine wave into the “From PCal PD” connector, Pins 1(+) and 6(-). Read the voltage at the “To/From PCal Interface” connector, Pins 3(+) and 11(-) with a DMM. Vary the frequency, and record the results in the table below:
+		\begin{center}
+			\resizebox{13cm}{!}{
+				\begin{tabular}{| c | c | c |}
+					\hline
+					\textbf{Input Frequency} & \textbf{Output Expected} & \textbf{Output Observed}\\ \hline
+					100Hz & & \\ \hline
+					1KHz &   &  \\ \hline
+					100KHz &  &  \\
+					\hline
+				\end{tabular}
+			}
+		\end{center}
+	\end{enumerate}
+\end{enumerate}
+\subsection{Interface board test}
 \section{Optical test}
 \subsection{Mode matching and beam quality}
 \section{Transfer function measurement}
