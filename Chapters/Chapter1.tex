@@ -74,18 +74,16 @@ For the electronic tests, we test the performance of Optical Follower Servo chas
 					Pins 7(+) and 15(-) & read differentially(A-B)  &\\ \hline
 					\multirow{2}{*}{“Out Mon” BNC} & -8.11dB at DC with 2 poles @ & \\
 					& 3KHz, and 1 zero @30KHz &\\ \hline
-					“Out Mon” BNC & -88.14º$\pm$2º  of phase at 3KHz&\\ \hline
-					\multirow{2}{*}{“Out Mon” BNC} & Rising to -125.93º$\pm$2º &\\ 
+					“Out Mon” BNC & -88.14 deg$\pm$2deg  of phase at 3KHz&\\ \hline
+					\multirow{2}{*}{“Out Mon” BNC} & Rising to -125.93deg$\pm$2deg &\\ 
 					&of phase @ 30KHz& \\ \hline
 					\multirow{2}{*}{“To AOM” BNC} & -8.11dB at DC with 2 poles @ & \\
 					& 3KHz, and 1 zero @30KHz &\\ \hline
-					“To AOM” BNC & -88.142º$\pm$2º of phase at 3KHz &\\ \hline
-					\multirow{2}{*}{“To AOM” BNC} & Rising to -125.93º$\pm$2º &\\ 
-					&of phase @ 30KHz& \\ 	
-					\hline
-				\end{tabular}
-			}
-		\end{center}
+					“To AOM” BNC & -88.142deg$\pm$2deg of phase at 3KHz &\\ \hline
+					\multirow{2}{*}{“To AOM” BNC} & Rising to -125.93deg$\pm$2deg &\\ 
+					&of phase @ 30KHz& \\ \hline
+\end{tabular}}
+\end{center}
 		
 		\item \textbf{Excitation Signal test:} \\
 		Move the input signal to the appropriate connector below, and read from the “To AOM” BNC. Record the results in the table below:
@@ -360,6 +358,23 @@ For the electronic tests, we test the performance of Optical Follower Servo chas
 \end{enumerate}
 
 \section{Optical test}
+\subsection{HWP angle}
+\subsection{Transmittance of AOM}
+Transmittance of the AOM depend on the input voltage of the AOM. We can change the Gain and offset of the AOM through the digital system. To work the feed back effectively, we need to find the optimized operating point. We measure the transmittance of AOM by changing input voltage. The function can be described as the following equation:
+\begin{equation}
+T=A_1 \sin{\left( \pi \frac{V}{A_2}\right)},
+\end{equation}
+where V is the input voltage,$ A_1$ and $A_2$ are measured values. We estimate the $A_1$ and $A_2$ by fitting.
+			\begin{center}
+				\resizebox{5cm}{!}{
+					\begin{tabular}{| c | c | c | }
+						\hline
+						 & $A_1$ &$A_2$ \\ \hline
+						 Path1&& \\ \hline
+                                                   Path2&& \\ \hline
+                                                   \end{tabular}}
+                                                   \end{center}
+
 \subsection{Mode matching and beam quality}
 First mount the laser isolator, half-wave plate and polarizer on the optical table, and use the \underline{\qquad\qquad} beam profiler to measure the beam width of our laser. Use power meter to measure the laser power, and rotate the half-wave plate in order to reduce the laser power to below the beam profiler requirement. Use the Iris Diaphragm to check whether the laser beam is parallel to the optical table or not, and mount the beam profiler and start the beam width measurement. Measure the beam width at different points. For each point, measure the beam width for one minute, and calculate the mean value and standard deviation. Finally fit the data, and calculate the beam waist and beam quality. The measured beam profile will be shown like the following figure:
 
@@ -390,6 +405,28 @@ Turn on the laser and wait for 2 hours until the laser become stable.
 \subsection{Close loop measurement}
 
 \section{Noise measurement}
+\subsection{Limitation of Noise}
+Basically, we cannot reduce the noise less than sum of electric noise and shot noise when we operate the feedback loop.
+\paragraph{Shot noise}
+The shot noise can be written by
+\begin{equation}
+\delta I=\sqrt{2eI},
+\end{equation}
+where $e$ is elementary charge, I is the current of PD. Then, we can estimate RPN of the shot noise.
+\begin{equation}
+RPN=\frac{\delta I}{I}=\sqrt{2e/I}.
+\end{equation}
+
+			\begin{center}
+				\resizebox{13cm}{!}{
+					\begin{tabular}{| c | c | c | c | c | c |}
+						\hline
+						\textbf{Gain of OFSPD1[A/V]} & \textbf{Gain of OFSPD2[A/V]} & \textbf{Offset of OFSPD1 [V]} &\textbf{Offset of OFSPD2 [V]}&\textbf{RPN 1}&\textbf{RPN2}\\ \hline
+						 &&&&& \\ \hline
+					\end{tabular}
+				}
+			\end{center}
+\paragraph{Electric noise}
 \subsection{Relative power noise}
 In order to prevent the laser noise from comtaminating the gravitational wave signal, we use 1/10 of KAGRA sensitivity to calculate the Pcal requirement. The following graph is the Pcal requirement:
 \begin{center}
