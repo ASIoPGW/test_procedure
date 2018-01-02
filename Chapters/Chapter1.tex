@@ -364,9 +364,41 @@ Transmittance of the AOM depend on the input voltage of the AOM. We can change t
 T=A_1 \sin{\left( \pi \frac{V}{A_2}\right)},
 \end{equation}
 where V is the input voltage,$ A_1$ and $A_2$ are measured values. We estimate the $A_1$ and $A_2$ by fitting.
+			\begin{center}
+				\resizebox{5cm}{!}{
+					\begin{tabular}{| c | c | c | }
+						\hline
+						 & $A_1$ &$A_2$ \\ \hline
+						 Path1&& \\ \hline
+                                                   Path2&& \\ \hline
+                                                   \end{tabular}}
+                                                   \end{center}
+
 \subsection{Mode matching and beam quality}
 \section{Transfer function measurement}
 \section{Noise measurement}
+\subsection{Limitation of Noise}
+Basically, we cannot reduce the noise less than sum of electric noise and shot noise when we operate the feedback loop.
+\paragraph{Shot noise}
+The shot noise can be written by
+\begin{equation}
+\delta I=\sqrt{2eI},
+\end{equation}
+where $e$ is elementary charge, I is the current of PD. Then, we can estimate RPN of the shot noise.
+\begin{equation}
+RPN=\frac{\delta I}{I}=\sqrt{2e/I}.
+\end{equation}
+
+			\begin{center}
+				\resizebox{13cm}{!}{
+					\begin{tabular}{| c | c | c | c | c | c |}
+						\hline
+						\textbf{Gain of OFSPD1[A/V]} & \textbf{Gain of OFSPD2[A/V]} & \textbf{Offset of OFSPD1 [V]} &\textbf{Offset of OFSPD2 [V]}&\textbf{RPN 1}&\textbf{RPN2}\\ \hline
+						 &&&&& \\ \hline
+					\end{tabular}
+				}
+			\end{center}
+\paragraph{Electric noise}
 \subsection{Relative power noise}
 \subsection{Harmonics noise}
 \section{Injection test}
