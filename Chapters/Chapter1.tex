@@ -269,7 +269,7 @@ For the electronic tests, we test the performance of Optical Follower Servo chas
 					“EtherCAT” Pin 30 & Remote & “To Shutter” Pin 1 & +15V$\pm$0.5V & \\ \hline 
 					“EtherCAT” Pin 30 & Remote & “To Shutter” Pin 3 & +15V$\pm$0.5V & \\ \hline 
 					“EtherCAT” Pin 30 & Local & “To Shutter” Pin 1 & +15V$\pm$0.5V & \\ \hline 
-					“EtherCAT” Pin 30 & Local & “To Shutter” Pin 3 & 0V“ & \\ \hline 
+					“EtherCAT” Pin 30 & Local & “To Shutter” Pin 3 & 0V & \\ \hline 
 					\multirow{2}{*}{“EtherCAT” Pin 30} & Local, pushing  & \multirow{2}{*}{“To Shutter” Pin 3} & \multirow{2}{*}{+15V$\pm$0.5V} & \\
 					& “Open” button & & & \\ \hline
 					\multirow{2}{*}{“EtherCAT” Pin 30} & Local, pushing  & \multirow{2}{*}{“To Shutter” Pin 1} & \multirow{2}{*}{0V} & \\ 
@@ -358,12 +358,115 @@ For the electronic tests, we test the performance of Optical Follower Servo chas
 		Move the jumpers WSPDA and WSPDB back to the “WSPD” position.
 	\end{enumerate}
 \end{enumerate}
+
 \section{Optical test}
 \subsection{Mode matching and beam quality}
+First mount the laser isolator, half-wave plate and polarizer on the optical table, and use the \underline{\qquad\qquad} beam profiler to measure the beam width of our laser. Use power meter to measure the laser power, and rotate the half-wave plate in order to reduce the laser power to below the beam profiler requirement. Use the Iris Diaphragm to check whether the laser beam is parallel to the optical table or not, and mount the beam profiler and start the beam width measurement. Measure the beam width at different points. For each point, measure the beam width for one minute, and calculate the mean value and standard deviation. Finally fit the data, and calculate the beam waist and beam quality. The measured beam profile will be shown like the following figure:
+
+\includegraphics[width=12cm]{path1_no_lens.eps}.
+
+After measuring beam profile, mount the beam splitter, and use power meter to measure the ratio of two paths from the beam splitter. Adjust the angle of incidence of the beam splitter to make the power difference to be less than 1$\%$. The typical value is \underline{\qquad\qquad}. After finishing adjusting beam splitter, install the positive lens for AOM and adjust the height of positive lens to make the laser beam maintain parallel to the optical table. According to the mode matching result, the distance between positive lens and the focus of laser should be 361mm, and the AOM should be mounted at 710mm position. Measure the beam profile around AOM position in two paths and fit the data. The mode matching result and the beam profile around AOM position are shown below:
+
+\begin{center}
+	\includegraphics[width=10cm]{modematching_AOM.eps}
+	\includegraphics[width=11cm]{path1_with_lens.eps}
+	\includegraphics[width=11cm]{path2_with_lens.eps}.
+\end{center}
+
+
+
+After measuring the beam profile around AOM, install two AOMs at the beam waist for each path. Turn on the laser, send a 1Vdc to AOM by power supply, and adjust the AOM position to enlarge the diffraction efficiency. The largest diffraction efficiency is 93$\%$. Use beam dumper to block the zeroth order beam. Install the polarizer, mirrors, beam sampler, photodetector, integrating sphere. Place a positive lens in front of OFSPD, read the voltage of photodetector by multimeter, and adjust the mirror to enlarge the value. For the mode matching at ETM, place a 1-inch negative lens at 2054mm position, and place a 2-inch positive lens at 2143mm position. The mode matching result is shown in below:
+
+\begin{center}
+	\includegraphics[width=13cm]{modematching_ETM.eps}.
+\end{center}
+
+
+Adjust the height to make the beam inject at the center of the lens to prevent from distortion. Place the final mirror and picomotor, send the beam from transmitter module to receiver module, and reflect the beam into integrating sphere in receiver module.
+
 \section{Transfer function measurement}
+\subsection{Open loop measurement}
+Turn on the laser and wait for 2 hours until the laser become stable. 
+\subsection{Close loop measurement}
+
 \section{Noise measurement}
 \subsection{Relative power noise}
+In order to prevent the laser noise from comtaminating the gravitational wave signal, we use 1/10 of KAGRA sensitivity to calculate the Pcal requirement. The following graph is the Pcal requirement:
+\begin{center}
+	\includegraphics[width=13cm]{pcal_requirement.eps}.
+\end{center}
+
 \subsection{Harmonics noise}
+\begin{center}
+	\resizebox{13cm}{!}{
+		\begin{tabular}{| c | c | c |}
+			\hline
+			\textbf{Injected frequency} & \multicolumn{2}{ c| }{\textbf{7Hz}} \\
+			\hline
+			 & \textbf{Noise Requirement} & \textbf{Observed value}\\ \hline
+			14Hz & -75.1724 & \\ \hline
+			21Hz & -83.1094 & \\ \hline
+			28Hz & -84.7756 & \\ 
+			\hline
+		\end{tabular}
+	}
+\end{center}
+\begin{center}
+	\resizebox{13cm}{!}{
+		\begin{tabular}{| c | c | c |}
+			\hline
+			\textbf{Injected frequency} & \multicolumn{2}{ c| }{\textbf{35Hz}} \\
+			\hline
+			& \textbf{Noise Requirement} & \textbf{Observed value}\\ \hline
+			70Hz & -58.7316 & \\ \hline
+			105Hz & -53.2105 & \\ \hline
+			140Hz & -48.3911 & \\ 
+			\hline
+		\end{tabular}
+	}
+\end{center}
+\begin{center}
+	\resizebox{13cm}{!}{
+		\begin{tabular}{| c | c | c |}
+			\hline
+			\textbf{Injected frequency} & \multicolumn{2}{ c| }{\textbf{330Hz}} \\
+			\hline
+			& \textbf{Noise Requirement} & \textbf{Observed value}\\ \hline
+			660Hz & -44.4623 & \\ \hline
+			990Hz & -34.5831 & \\ \hline
+			1320Hz & -27.3487 & \\ 
+			\hline
+		\end{tabular}
+	}
+\end{center}
+\begin{center}
+	\resizebox{13cm}{!}{
+		\begin{tabular}{| c | c | c |}
+			\hline
+			\textbf{Injected frequency} & \multicolumn{2}{ c| }{\textbf{1KHz}} \\
+			\hline
+			& \textbf{Noise Requirement} & \textbf{Observed value}\\ \hline
+			2KHz & -42.0956 & \\ \hline
+			3KHz & -31.6161 & \\ \hline
+			4KHz & -24.1504 & \\ 
+			\hline
+		\end{tabular}
+	}
+\end{center}
+\begin{center}
+	\resizebox{13cm}{!}{
+		\begin{tabular}{| c | c | c |}
+			\hline
+			\textbf{Injected frequency} & \multicolumn{2}{ c| }{\textbf{3KHz}} \\
+			\hline
+			& \textbf{Noise Requirement} & \textbf{Observed value}\\ \hline
+			6KHz & -27.1755 & \\ \hline
+			9KHz & -16.6197 & \\ 
+			\hline
+		\end{tabular}
+	}
+\end{center}
+
 \section{Injection test}
 \red{
 	I think the time-delay measurement by sine-gaussian signal should be categorized as "Calibration"\\
