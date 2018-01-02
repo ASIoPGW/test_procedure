@@ -74,18 +74,16 @@ For the electronic tests, we test the performance of Optical Follower Servo chas
 					Pins 7(+) and 15(-) & read differentially(A-B)  &\\ \hline
 					\multirow{2}{*}{“Out Mon” BNC} & -8.11dB at DC with 2 poles @ & \\
 					& 3KHz, and 1 zero @30KHz &\\ \hline
-					“Out Mon” BNC & -88.14º$\pm$2º  of phase at 3KHz&\\ \hline
-					\multirow{2}{*}{“Out Mon” BNC} & Rising to -125.93º$\pm$2º &\\ 
+					“Out Mon” BNC & -88.14 deg$\pm$2deg  of phase at 3KHz&\\ \hline
+					\multirow{2}{*}{“Out Mon” BNC} & Rising to -125.93deg$\pm$2deg &\\ 
 					&of phase @ 30KHz& \\ \hline
 					\multirow{2}{*}{“To AOM” BNC} & -8.11dB at DC with 2 poles @ & \\
 					& 3KHz, and 1 zero @30KHz &\\ \hline
-					“To AOM” BNC & -88.142º$\pm$2º of phase at 3KHz &\\ \hline
-					\multirow{2}{*}{“To AOM” BNC} & Rising to -125.93º$\pm$2º &\\ 
-					&of phase @ 30KHz& \\ 	
-					\hline
-				\end{tabular}
-			}
-		\end{center}
+					“To AOM” BNC & -88.142deg$\pm$2deg of phase at 3KHz &\\ \hline
+					\multirow{2}{*}{“To AOM” BNC} & Rising to -125.93deg$\pm$2deg &\\ 
+					&of phase @ 30KHz& \\ \hline
+\end{tabular}}
+\end{center}
 		
 		\item \textbf{Excitation Signal test:} \\
 		Move the input signal to the appropriate connector below, and read from the “To AOM” BNC. Record the results in the table below:
@@ -359,6 +357,13 @@ For the electronic tests, we test the performance of Optical Follower Servo chas
 	\end{enumerate}
 \end{enumerate}
 \section{Optical test}
+\subsection{HWP angle}
+\subsection{Transmittance of AOM}
+Transmittance of the AOM depend on the input voltage of the AOM. We can change the Gain and offset of the AOM through the digital system. To work the feed back effectively, we need to find the optimized operating point. We measure the transmittance of AOM by changing input voltage. The function can be described as the following equation:
+\begin{equation}
+T=A_1 \sin{\left( \pi \frac{V}{A_2}\right)},
+\end{equation}
+where V is the input voltage,$ A_1$ and $A_2$ are measured values. We estimate the $A_1$ and $A_2$ by fitting.
 \subsection{Mode matching and beam quality}
 \section{Transfer function measurement}
 \section{Noise measurement}
