@@ -517,9 +517,13 @@ In order to prevent the laser noise from comtaminating the gravitational wave si
 	\end{itemize}
 }
 \subsection{Hardware Property}
+We need to create “inverse actuation filters” in front of injection channel to compensate the effect of $1/f^2$ force-to-length transferfunction, AI filter, overall gain, and OFS transfer function\cite{ligo:inj}.
+
 	\subsubsection{Anti-Imaging Chassis}
 \red{Do we need de-whitening chassis to increase effective dynamical range of DGS output?}
 	\subsubsection{OFS Low-Pass Filter Transfer Function}
+
+
 
 \subsection{File preparation}
 \red{How to take care of the inverse transfer function of hardware in each stage.}
