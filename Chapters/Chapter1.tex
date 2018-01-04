@@ -506,7 +506,7 @@ In order to prevent the laser noise from comtaminating the gravitational wave si
 
 \section{Injection test}
 \red{
-	I think the time-delay measurement by sine-gaussian signal should be categorized as "Calibration"\\
+	NOTE: I think the time-delay measurement by sine-gaussian signal should be categorized as "Calibration"\\
 	Phase reconstruction ?
     \begin{itemize}
         \item Sine-gaussian
@@ -516,14 +516,20 @@ In order to prevent the laser noise from comtaminating the gravitational wave si
         I don't understand the practical difficulty of continuous wave injection.
     \end{itemize}
 }
-\subsection{Hardware Property}
-We need to create “inverse actuation filters” in front of injection channel to compensate the effect of $1/f^2$ force-to-length transferfunction, AI filter, overall gain, and OFS transfer function\cite{ligo:inj}. Besides, the time(phase) delay of each stage cannot be correct by the “inverse actuation filters”, which suppose to be an causal IIR filter if we implement it in CDS-filter.
+The capability of Hardware Injection using Pcal is limited by $1/f^2$ Force-to-Length transfer function.
+
+\subsection{Hardware Property and Inverse Actuation Filters}
+We need to create “inverse actuation filters” in front of injection channel to compensate the effect of $1/f^2$ force-to-length transferfunction, AI filter, overall gain, and OFS transfer function\cite{ligo:inj}. Besides, the time(phase) delay of each stage cannot be correct by the “inverse actuation filters”, which suppose to be an causal IIR filter if we implement it in CDS-filter. Therefore, we have to measure this delay and take it into account when we analyze our data.
     \subsubsection{Force-to-Length Transfer Function}
     \red{How to make sure this suspension model is a good approximation of type-A suspension system of ETM}
     \subsubsection{Anti-Imaging Chassis}
+    \red{What does this sentence means?\\
+    signal fidelity above 1 kHz is limited due to the shape of the anti-imaging filters and the desire to roll off the compensation filters close to the Nyquist frequency such that the compensation filters remain stable.
+    --\cite{ligo:inj}} \\
     
     \red{Do we need de-whitening chassis to increase effective dynamical range of DGS output?}
     \subsubsection{OFS Transfer Function}
+    Using the result of OFS close loop transfer function measurement to create it's inverse filter. 
     \subsubsection{Gain}
     We need Excitation(Volt) to Pcal Laser Power(Watt) Gain
     \begin{enumerate}
@@ -538,28 +544,63 @@ We need to create “inverse actuation filters” in front of injection channel 
     \end{enumerate}
     
     \subsubsection{Overall delay}
- In LIGO case, they have overall delay at order of 240 $\mu s$ \cite{ligo:inj}\\
- We may check the delay of Pcal system by comparing PD channel and Excitation channel in frame file
+In LIGO case, they have overall delay at order of 240 $\mu s$ \cite{ligo:inj}\\
+We may check the delay of Pcal system by comparing PD channel and Excitation channel in frame file
 
 
 \subsection{File preparation}
 \red{How to take care of the inverse transfer function of hardware in each stage?}\\
 We may prepare all the injection file in the unit of strain. All the issue due the the Injection channel property should be take care by \emph{Inverse Actuation Filter}
+    \subsubsection{Sine-Gaussian Signal}
+    For Injecting Sine-Gaussian Signal, we may turn off the \emph{Inverse Actuation Filter}.
+    
+    
     \subsubsection{Compact Binary Coalescence signal}
-		\begin{itemize}
-			\item BH-BH
-			\item BH-NS
-			\item NS-NS\\
-				\red{the ability of reconstructing post-merger phase}
-		\end{itemize}
-	\subsubsection{Gravitational Wave Burst Signal}
-		\begin{itemize}
-			\item CCSNe
-		\end{itemize}
-	\subsubsection{Continuous Waves Signal}
+        \begin{itemize}
+            \item BH-BH\\
+            GW150914 -- Although there are many different templates, without loss of generality, we may use SEOBNRv2 in LALsuite to prepare the waveform.
+            \item BH-NS
+            \item NS-NS\\
+            \red{the ability of reconstructing post-merger phase}
+        \end{itemize}
+    \subsubsection{Gravitational Wave Burst Signal}
+        \begin{itemize}
+            \item CCSNe
+        \end{itemize}
+    \subsubsection{Continuous Waves Signal}
 
-
-
+\subsection{Injection Test}
+    \subsubsection{Time delay measurement}
+        \begin{enumerate}
+            \item Reboot standalone if awgstream is dead.  
+            \item Turn off the $1/f^2$ part of \emph{Inverse Actuation Filter}.
+            \item Make sure OFS loop is closed.
+            \item Run timeDelayMeasure.sh \\
+            timeDelayMeasure.sh will inject \red{5,10,500,1k... Hz Sine-Gaussian signal with Q=20, Amplitude=?}
+            \item Run timeDelayAnalyze.sh \\ 
+            timeDelayAnalyze.sh will Compare the injected file with \red{Y1\_OOO\_EXC?}, Y1\_PD\_OFS, Y1\_PD\_RX, Y1\_PD\_TX, Y2\_PD\_OFS, Y2\_PD\_RX, Y2\_PD\_TX by using matched-filtering. 
+        \end{enumerate}
+        \red{We may keep the open-loop result for other purpose}\\
+        \begin{itemize}
+            \item The time delay of DGS?
+            \item The time delay of OFS (by spectral analyzer)?
+        \end{itemize}
+        
+     \subsubsection{Transfer function and Gain measurement}
+        \begin{enumerate}
+            \item Reboot standalone if awgstream is dead.  
+            \item Turn off the $1/f^2$ part of \emph{Inverse Actuation Filter}.
+            \item Make sure the RxPD and TxPD are calibrated with WSK.
+            \item Run tfMeasure.sh \\
+                \subitem tfMeasure.sh :
+                \begin{enumerate}
+                    \item send different DC level  
+                    \item send \red{??Hz ??Amplitude} sine signals thorough awgstream? or control the .            
+                \end{enumerate}
+            \item Check result in Y1\_PD\_OFS, Y1\_PD\_RX, Y1\_PD\_TX, Y2\_PD\_OFS, Y2\_PD\_RX, Y2\_PD\_TX. 
+        \end{enumerate}
+        \red{Could we use diaggui to do the swept-sine measurement? }\\
+        
 
 \subsection{}
 \section{Summary}
