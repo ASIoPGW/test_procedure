@@ -378,26 +378,54 @@ where V is the input voltage,$ A_1$ and $A_2$ are measured values. We estimate t
                                                    \end{center}
 
 \subsection{Mode matching and beam quality}
-First mount the laser isolator, half-wave plate and polarizer on the optical table, and use the \underline{\qquad\qquad} beam profiler to measure the beam width of our laser. Use power meter to measure the laser power, and rotate the half-wave plate in order to reduce the laser power to below the beam profiler requirement. Use the Iris Diaphragm to check whether the laser beam is parallel to the optical table or not, and mount the beam profiler and start the beam width measurement. Measure the beam width at different points. For each point, measure the beam width for one minute, and calculate the mean value and standard deviation. Finally fit the data, and calculate the beam waist and beam quality. The measured beam profile will be shown like the following figure:
+First mount the laser isolator, half-wave plate and polarizer on the optical table, and use the \underline{\qquad\qquad} beam profiler to measure the beam width of our laser. Use power meter to measure the laser power, and rotate the half-wave plate in order to reduce the laser power to below the beam profiler requirement. Use the Iris Diaphragm to check whether the laser beam is parallel to the optical table or not, and mount the beam profiler and start the beam width measurement. Measure the beam width at different points. For each point, measure the beam width for one minute, and calculate the mean value and standard deviation. Finally fit the data, and calculate the beam waist and beam quality. The measured beam profile will be shown like Figure~\ref{fig:beam_profile}:
 
-%\includegraphics[width=12cm]{path1_no_lens.eps}.
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=15cm]{path1_no_lens.eps}
+		\caption{Beam profile of laser.} 
+		\label{fig:beam_profile} 
+	\end{center}
+\end{figure}
 
-After measuring beam profile, mount the beam splitter, and use power meter to measure the ratio of two paths from the beam splitter. Adjust the angle of incidence of the beam splitter to make the power difference to be less than 1$\%$. The typical value is \underline{\qquad\qquad}. After finishing adjusting beam splitter, install the positive lens for AOM and adjust the height of positive lens to make the laser beam maintain parallel to the optical table. According to the mode matching result, the distance between positive lens and the focus of laser should be 361mm, and the AOM should be mounted at 710mm position. Measure the beam profile around AOM position in two paths and fit the data. The mode matching result and the beam profile around AOM position are shown below:
+After measuring beam profile, mount the beam splitter, and use power meter to measure the ratio of two paths from the beam splitter. Adjust the angle of incidence of the beam splitter to make the power difference to be less than 1$\%$. The typical value is \underline{\qquad\qquad}. After finishing adjusting beam splitter, install the positive lens for AOM and adjust the height of positive lens to make the laser beam maintain parallel to the optical table. Figure~\ref{fig:modematching_AOM} is the mode matching result. According to the result, the distance between positive lens and the focus of laser should be 361mm, and the AOM should be mounted at 710mm position. Figure~\ref{fig:beamprofile_AOM1} and Figure~\ref{fig:beamprofile_AOM2} are the data and the fitting results.
 
-%\begin{center}
-%	\includegraphics[width=10cm]{modematching_AOM.eps}
-%	\includegraphics[width=11cm]{path1_with_lens.eps}
-%	\includegraphics[width=11cm]{path2_with_lens.eps}.
-%\end{center}
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=15cm]{modematching_AOM.eps}
+		\caption{Mode matching for AOM} 
+		\label{fig:modematching_AOM} 
+	\end{center}
+\end{figure}
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=15cm]{path1_with_lens.eps}
+		\caption{Beam profile at AOM (Path1)} 
+		\label{fig:beamprofile_AOM1} 
+	\end{center}
+\end{figure}
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=15cm]{path2_with_lens.eps}
+		\caption{Beam profile at AOM (Path2)} 
+		\label{fig:beamprofile_AOM2} 
+	\end{center}
+\end{figure}
+
+
+After measuring the beam profile around AOM, install two AOMs at the beam waist for each path. Turn on the laser, send a 1Vdc to AOM by power supply, and adjust the AOM position to enlarge the diffraction efficiency. The largest diffraction efficiency is 93$\%$. Use beam dumper to block the zeroth order beam. Install the polarizer, mirrors, beam sampler, photodetector, integrating sphere. Place a positive lens in front of OFSPD, read the voltage of photodetector by multimeter, and adjust the mirror to enlarge the value. For the mode matching at ETM, place a 1-inch negative lens at 2054mm position, and place a 2-inch positive lens at 2143mm position. The mode matching result is shown in Figure~\ref{fig:modematching_ETM}.
 
 
 
-After measuring the beam profile around AOM, install two AOMs at the beam waist for each path. Turn on the laser, send a 1Vdc to AOM by power supply, and adjust the AOM position to enlarge the diffraction efficiency. The largest diffraction efficiency is 93$\%$. Use beam dumper to block the zeroth order beam. Install the polarizer, mirrors, beam sampler, photodetector, integrating sphere. Place a positive lens in front of OFSPD, read the voltage of photodetector by multimeter, and adjust the mirror to enlarge the value. For the mode matching at ETM, place a 1-inch negative lens at 2054mm position, and place a 2-inch positive lens at 2143mm position. The mode matching result is shown in below:
-
-%\begin{center}
-%	\includegraphics[width=13cm]{modematching_ETM.eps}.
-%\end{center}
-
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=15cm]{modematching_ETM.eps}
+		\caption{Mode matching for ETM}
+		\label{fig:modematching_ETM} 
+	\end{center}
+\end{figure}
 
 Adjust the height to make the beam inject at the center of the lens to prevent from distortion. Place the final mirror and picomotor, send the beam from transmitter module to receiver module, and reflect the beam into integrating sphere in receiver module.
 
