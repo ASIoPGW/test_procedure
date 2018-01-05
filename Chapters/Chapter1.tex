@@ -430,6 +430,31 @@ RPN=\frac{\delta I}{I}=\sqrt{2e/I}.
 				}
 			\end{center}
 \paragraph{Electric noise}
+We mesure the electric noise. To under stand the electric noise of the feedback loop, we need to write down each noise source.
+Figure~\ref{fig:noise} is the assumed model of OFS, where input laser power is $P_{in}=P_0 + n_{laser}$.
+The output from OFSPD is described as
+\begin{equation}
+P_0 T_0 +N_{in}(f) = (P_0 +n_{laser})(T_0+T'(n_{AOM}+g(-P_0 T_0+n_fil)-P_0 T_0 n_{offset} +P_0 +T_0 N_{in}(f))+n_{OFSPD}),
+\end{equation}
+where $n_{i}$ are noises as shown in Fig~\ref{fig:noise}. We can estimate noise of OFSPD as follows:
+\begin{eqnarray}
+N_{in}(f)&=&\frac{1}{1-(P_0+n_{laser}T'g)}[n_{laser}T_0 + (P_0+n_{laser})T'(n_{AOM}+g(n_{fil}-P_0T_0n_{offset})+n_{OFSPD})], \nonumber \\
+&\sim&\frac{1}{1-P_0T'g}[n_{laser}T_0 + P_0T'(n_{AOM}+g(n_{fil}-P_0T_0n_{offset})+n_{OFSPD})].
+\end{eqnarray}
+We normalize the $N_{in}$ with PD output as follows:
+\begin{equation}
+\frac{N_{in}(f)}{P_0T_0}=\frac{1}{1-P_0T'g}[\frac{n_{laser}}{P_0} + \frac{T'}{T_0}(n_{AOM}+g(n_{fil}P_0T_0n_{offset})+\frac{n_{OFSPD})}{P_0T_0}].
+\end{equation}
+ We measure the noise budge of laser, feed back and PD.
+\begin{figure}
+\begin{center}
+\includegraphics[width=15cm]{Figures/noise_model.eps}
+\caption{Noise model of OFS.} 
+\label{fig:noise} 
+\end{center}
+\end{figure}
+
+
 \subsection{Relative power noise}
 In order to prevent the laser noise from comtaminating the gravitational wave signal, we use 1/10 of KAGRA sensitivity to calculate the Pcal requirement. The following graph is the Pcal requirement:
 \begin{center}
