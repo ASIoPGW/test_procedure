@@ -408,6 +408,7 @@ Adjust the height to make the beam inject at the center of the lens to prevent f
 
 
 \section{Transfer function measurement}
+\label{tfMeasure}
 \subsection{OFS Open loop measurement}
 \label{OFS_OLTF}
 Turn on the laser and wait for 2 hours until the laser become stable. Open the loop of OFS, set the gain to \underline{\qquad} V, and inject \underline{\qquad} $\mbox{V}_{\mbox{p-p}}$ signal to OFS. Connect the injected signal and output signal to spectrum analyzer and measure transfer function of open loop.
@@ -464,7 +465,7 @@ We mesure the electric noise. To under stand the electric noise of the feedback 
 Figure~\ref{fig:noise} is the assumed model of OFS, where input laser power is $P_{in}=P_0 + n_{laser}$.
 The output from OFSPD is described as
 \begin{equation}
-P_0 T_0 +N_{in}(f) = (P_0 +n_{laser})(T_0+T'(n_{AOM}+g(-P_0 T_0+n_fil)-P_0 T_0 n_{offset} +P_0 +T_0 N_{in}(f))+n_{OFSPD}),
+P_0 T_0 +N_{in}(f) = (P_0 +n_{laser})(T_0+T'(n_{AOM}+g(-P_0 T_0+n_fil)-P_0 T_0  n_{offset} +P_0 +T_0 N_{in}(f))+n_{OFSPD}),
 \end{equation}
 where $n_{i}$ are noises as shown in Fig~\ref{fig:noise}. We can estimate noise of OFSPD as follows:
 \begin{eqnarray}
@@ -578,12 +579,11 @@ The capability of Hardware Injection using Pcal is limited by $1/f^2$ Force-to-L
 
 \subsection{Inverse Actuation Filters}
 We need to create “inverse actuation filters” in front of injection channel to compensate the effect of $1/f^2$ force-to-length transferfunction, AI filter, overall gain, and OFS transfer function\cite{ligo:inj}. Besides, the time(phase) delay of each stage cannot be correct by the “inverse actuation filters”, which suppose to be an causal IIR filter if we implement it by using CDS-filter. Therefore, we have to measure this delay and take it into account when we analyze our data.
-    \subsubsection{Force-to-Length Transfer Function}
     
-    \subsubsection{Anti-Imaging Chassis}
-    \red{Do we have measured result of this part?}
-    
-    \subsubsection{OFS Transfer Function}
+    \ref{tfMeasure}
+    \item{Force-to-Length Transfer Function}
+    \item{Anti-Imaging Chassis}    
+    \item{OFS Transfer Function}
     Using the result of OFS close loop transfer function measurement\ref{OFS_OLTF} to create it's inverse filter. 
     \subsubsection{Gain}
     We need Excitation(Volt) to Pcal Laser Power(Watt) Gain
