@@ -579,12 +579,14 @@ The capability of Hardware Injection using Pcal is limited by $1/f^2$ Force-to-L
 
 \subsection{Inverse Actuation Filters}
 We need to create “inverse actuation filters” in front of injection channel to compensate the effect of $1/f^2$ force-to-length transferfunction, AI filter, overall gain, and OFS transfer function\cite{ligo:inj}. Besides, the time(phase) delay of each stage cannot be correct by the “inverse actuation filters”, which suppose to be an causal IIR filter if we implement it by using CDS-filter. Therefore, we have to measure this delay and take it into account when we analyze our data.
-    
-    \ref{tfMeasure}
-    \item{Force-to-Length Transfer Function}
-    \item{Anti-Imaging Chassis}    
-    \item{OFS Transfer Function}
-    Using the result of OFS close loop transfer function measurement\ref{OFS_OLTF} to create it's inverse filter. 
+    \subsubsection{Inverse Transfer Functions}
+        We may use the result from Sec.(\ref{tfMeasure}) ,swapping its pole and zero, fine-turning them to make corresponding IIR stable.
+        \begin{enumerate}
+            \item Force-to-Length Transfer Function
+            \item Anti-Imaging Chassis   
+            \item OFS Transfer Function \\
+            Using the result of OFS close loop transfer function measurement\ref{OFS_OLTF} to create it's inverse filter. 
+        \end{enumerate}
     \subsubsection{Gain}
     We need Excitation(Volt) to Pcal Laser Power(Watt) Gain
    % \begin{enumerate}
