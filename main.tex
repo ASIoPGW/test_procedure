@@ -42,12 +42,12 @@ headsepline, % Uncomment to get a line under the header
 \usepackage[T1]{fontenc} % Output font encoding for international characters
 
 \usepackage{palatino} % Use the Palatino font by default
-\usepackage[outdir=./]{epstopdf}
-\epstopdfsetup{outdir=./}
+%\usepackage[outdir=./]{epstopdf}
+\usepackage[outdir=Figures/]{epstopdf}
+%\epstopdfsetup{outdir=Figures/}
 \usepackage{tabularx}
 \usepackage{multirow}
 \usepackage{verbatim} 
-\usepackage[outdir=./]{epstopdf}
 %\usepackage{hyperref}
 \usepackage[driverfallback=dvipdfmx]{hyperref}
 \usepackage{url}
@@ -71,9 +71,9 @@ bookmarksopen=true,colorlinks=true,citecolor=blue,linkcolor=blue,urlcolor=blue}
 
 \geometry{
 	paper=a4paper, % Change to letterpaper for US letter
-	inner=2.5cm, % Inner margin
-	outer=3.8cm, % Outer margin
-	bindingoffset=.5cm, % Binding offset
+	inner=2.0cm, % Inner margin
+	outer=3.5cm, % Outer margin
+	bindingoffset=.3cm, % Binding offset
 	top=1.5cm, % Top margin
 	bottom=1.5cm, % Bottom margin
 	%showframe, % Uncomment to show how the type block is set on the page
