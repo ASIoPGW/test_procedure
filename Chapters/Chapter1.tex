@@ -364,6 +364,8 @@ For the electronic tests, we test the performance of Optical Follower Servo chas
     Measuring the Transfer function of AI filter
 
 
+\subsection{Beam position monitoring board test}
+
 \section{Optical test}
 \subsection{HWP angle}
 \subsection{Transmittance of AOM}
@@ -441,7 +443,7 @@ Close the loop, set the OFS gain to 10V, and send 1$\mbox{V}_{\mbox{p-p}}$ signa
 \section{Noise measurement}
 \subsection{Limitation of Noise}
 Basically, we cannot reduce the noise less than sum of electric noise and shot noise when we operate the feedback loop.
-\paragraph{Shot noise}
+\subsubsection{Shot noise}
 The shot noise can be written by
 \begin{equation}
 \delta I=\sqrt{2eI},
@@ -460,7 +462,7 @@ RPN=\frac{\delta I}{I}=\sqrt{2e/I}.
 					\end{tabular}
 				}
 			\end{center}
-\paragraph{Electric noise}
+\subsubsection{Electric noise}
 We mesure the electric noise. To under stand the electric noise of the feedback loop, we need to write down each noise source.
 Figure~\ref{fig:noise} is the assumed model of OFS, where input laser power is $P_{in}=P_0 + n_{laser}$.
 The output from OFSPD is described as
@@ -474,7 +476,7 @@ N_{in}(f)&=&\frac{1}{1-(P_0+n_{laser}T'g)}[n_{laser}T_0 + (P_0+n_{laser})T'(n_{A
 \end{eqnarray}
 We normalize the $N_{in}$ with PD output as follows:
 \begin{equation}
-\frac{N_{in}(f)}{P_0T_0}=\frac{1}{1-P_0T'g}[\frac{n_{laser}}{P_0} + \frac{T'}{T_0}(n_{AOM}+g(n_{fil}P_0T_0n_{offset})+\frac{n_{OFSPD})}{P_0T_0}].
+\frac{N_{in}(f)}{P_0T_0}=\frac{1}{1-P_0T'g}[\frac{n_{laser}}{P_0} + \frac{T'}{T_0}(n_{AOM}+g(n_{fil}-P_0T_0n_{offset}))+\frac{n_{OFSPD}}{P_0T_0}].
 \end{equation}
  We measure the noise budge of laser, feed back and PD.
 \begin{figure}
@@ -485,6 +487,10 @@ We normalize the $N_{in}$ with PD output as follows:
 \end{center}
 \end{figure}
 
+\paragraph{Laser noise}
+\paragraph{AOM noise}
+\paragraph{feedback noise}
+\paragraph{PD noise}
 
 \subsection{Relative power noise}
 In order to prevent the laser noise from comtaminating the gravitational wave signal, we use 1/10 of KAGRA sensitivity to calculate the Pcal requirement. The following graph is the Pcal requirement:
@@ -493,6 +499,8 @@ In order to prevent the laser noise from comtaminating the gravitational wave si
 \end{center}
 
 \subsection{Harmonics noise}
+We need to modulate the power of the laser beam to induce the displacement of the ETM dependent on the amplitude of the power modulation.
+But when we modulate the power, we created harmonics that we want to keep below a requirement, because we don’t want to move the mass at the harmonics frequencies.
 \begin{center}
 	\resizebox{13cm}{!}{
 		\begin{tabular}{| c | c | c |}
