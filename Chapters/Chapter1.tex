@@ -339,6 +339,13 @@ For the electronic tests, we test the performance of Optical Follower Servo chas
 		Move the jumpers WSPDA and WSPDB back to the “WSPD” position.
 	\end{enumerate}
 \end{enumerate}
+\subsection{Beam Position Monitoring Test}
+
+
+\subsection{Digital System Test}
+    \subsubsection{Anti-Imaging Chassis}
+    Measuring the Transfer function of AI filter
+
 
 \subsection{Beam position monitoring board test}
 
@@ -413,18 +420,59 @@ After measuring the beam profile around AOM, install two AOMs at the beam waist 
 Adjust the height to make the beam inject at the center of the lens to prevent from distortion. Place the final mirror and picomotor, send the beam from transmitter module to receiver module, and reflect the beam into integrating sphere in receiver module.
 
 \section{Transfer function measurement}
-\subsection{Open loop measurement}
-According to the OFS electric circuit, the transfer function of OFS is:
-\begin{eqnarray}
-T=\frac{V_{out}}{V_{in}}=&\frac{1}{1+j\omega(5k)(20p)}\frac{G}{1+j\omega(2k)(27n)}\frac{1+j\omega(0.2k)(27n)}{1+j\omega(2.2k)(27n)}\frac{1}{3}\frac{1}{1+j\omega(5k)(20p)}\\
-=&\frac{G}{3}\frac{1+j(f/29.473KHz)}{(1+j(f/2.947KHz))(1+j(f/2.679KHz))(1+j(f/1.591MHz))^{2}}
-\end{eqnarray}
 
-Turn on the laser and wait for 2 hours until the laser become stable. Open the loop of OFS, set the gain to \underline{\qquad} V, and inject \underline{\qquad} $\mbox{V}_{\mbox{p-p}}$ signal to OFS. Connect the injected signal and output signal to spectrum analyzer and measure transfer function of open loop.
-\subsection{Close loop measurement}
+According to the OFS electric circuit, the open loop transfer function of OFS is:
+\begin{eqnarray}
+T_{open}=\frac{V_{out}}{V_{in}}=&\frac{1}{1+j\omega(5k)(20p)}\frac{G}{1+j\omega(2k)(27n)}\frac{1+j\omega(0.2k)(27n)}{1+j\omega(2.2k)(27n)}\frac{1}{3}\frac{1}{1+j\omega(5k)(20p)}\\
+=&\frac{G}{3}\frac{1+j(f/29.473KHz)}{(1+j(f/2.947KHz))(1+j(f/2.679KHz))(1+j(f/1.591MHz))^{2}}
+\end{eqnarray},
+and the transfer function of close loop is 
+\begin{equation}
+T_{close}=\frac{T_{open}}{1+T_{open}}
+\end{equation}.
+Figure~\ref{fig:amplitude} and Figure~\ref{fig:phase} show the simulation result of open and close loop transfer function at 10V gain.
+
+\begin{figure}
+	\begin{center}
+		\subfigure[Amplitude]{
+			\includegraphics[width=15cm]{Amplitude.eps}
+			\label{fig:amplitude} 
+		}
+		\subfigure[Phase]{
+			\includegraphics[width=15cm]{Phase.eps}
+			\label{fig:phase} 
+		}
+	\caption{Transfer function}
+	\label{fig:transferfunction}
+	\end{center}
+\end{figure}
+
+
+\subsection{OFS Open loop measurement}
+
+Turn on the laser and wait for 2 hours until the laser become stable. Open the loop of OFS, set the gain to 10V, and inject \underline{\qquad} $\mbox{V}_{\mbox{p-p}}$ signal to OFS. Connect the injected signal and output signal to spectrum analyzer and measure transfer function of open loop.
+\subsection{OFS Close loop measurement}
 Close the loop, set the OFS gain to 10V, and send 1$\mbox{V}_{\mbox{p-p}}$ signal to OFS. Connect the injected signal and output signal to spectrum analyzer and measure transfer function of close loop.
 \\\\
-\noindent Measure the open loop and close loop transfer function for both APC and ACC mode.
+\noindent Measure the open loop and close loop transfer function for both APC and ACC mode, and compare the result to the simulation result.
+
+\subsection{Anti-Imaging Filter measurement}
+    \red{What does this sentence means?\\
+    signal fidelity above 1 kHz is limited due to the shape of the anti-imaging filters and the desire to roll off the compensation filters close to the Nyquist frequency such that the compensation filters remain stable.
+    --\cite{ligo:inj}} \\
+    
+    \red{Do we need de-whitening chassis to increase effective dynamical range of DGS output?}
+\subsection{Force-to-Length Transfer function measurement}
+    \red{How to make sure this suspension model is a good approximation of type-A suspension system of ETM}
+\section{DC Gain measurement}
+\subsection{DAC Count to Volt Gain}
+    In principle, the 16bit DAC can output +/-32768 counts, which is corresponding to +/- 10V. 
+\subsection{OFS Close Loop Gain(Excitation to OFSPD)}
+    Although the theoretical DC Gain of OFS is almost unity, We have to check the discrepancy carefully. 
+\subsection{OFSPD to RxPD and TxPD Gain}
+    The relation should be maintained by optical design. We may check its stability.
+\subsection{RxPD and TxPD to WSK (Watt)}
+
 
 \section{Noise measurement}
 \subsection{Limitation of Noise}
@@ -571,30 +619,30 @@ But when we modulate the power, we created harmonics that we want to keep below 
 }
 The capability of Hardware Injection using Pcal is limited by $1/f^2$ Force-to-Length transfer function.
 
-\subsection{Hardware Property and Inverse Actuation Filters}
-We need to create “inverse actuation filters” in front of injection channel to compensate the effect of $1/f^2$ force-to-length transferfunction, AI filter, overall gain, and OFS transfer function\cite{ligo:inj}. Besides, the time(phase) delay of each stage cannot be correct by the “inverse actuation filters”, which suppose to be an causal IIR filter if we implement it in CDS-filter. Therefore, we have to measure this delay and take it into account when we analyze our data.
-    \subsubsection{Force-to-Length Transfer Function}
-    \red{How to make sure this suspension model is a good approximation of type-A suspension system of ETM}
-    \subsubsection{Anti-Imaging Chassis}
-    \red{What does this sentence means?\\
-    signal fidelity above 1 kHz is limited due to the shape of the anti-imaging filters and the desire to roll off the compensation filters close to the Nyquist frequency such that the compensation filters remain stable.
-    --\cite{ligo:inj}} \\
-    
-    \red{Do we need de-whitening chassis to increase effective dynamical range of DGS output?}
-    \subsubsection{OFS Transfer Function}
-    Using the result of OFS close loop transfer function measurement to create it's inverse filter. 
+\subsection{Inverse Actuation Filters}
+We need to create “inverse actuation filters” in front of injection channel to compensate the effect of $1/f^2$ force-to-length transferfunction, AI filter, overall gain, and OFS transfer function\cite{ligo:inj}. Besides, the time(phase) delay of each stage cannot be correct by the “inverse actuation filters”, which suppose to be an causal IIR filter if we implement it by using CDS-filter. Therefore, we have to measure this delay and take it into account when we analyze our data.
+    \subsubsection{Inverse Transfer Functions}
+        We may use the result from Sec.(\ref{tfMeasure}) ,swapping its pole and zero, fine-turning them to make corresponding IIR stable.
+        \begin{enumerate}
+            \item Force-to-Length Transfer Function
+            \item Anti-Imaging Chassis   
+            \item OFS Transfer Function \\
+            Using the result of OFS close loop transfer function measurement\ref{OFS_OLTF} to create it's inverse filter. 
+        \end{enumerate}
+
+
     \subsubsection{Gain}
     We need Excitation(Volt) to Pcal Laser Power(Watt) Gain
-    \begin{enumerate}
-        \item Count to Volt \\
-            \red{is it affected by DC power supply?}\\
-            if this 
-        \item Voltage drop between cables \\
-        \item OFS efficiency \\
-            How much difference between OFSPD signal and Excitation input of OFS
-        \item OFSPD vs Tx, Rx, WS \\
-	    Calibrate the OFS
-    \end{enumerate}
+ %   \begin{enumerate}
+%        \item Count to Volt \\
+%            \red{is it affected by DC power supply?}\\
+%            if this 
+%        \item Voltage drop between cables \\
+%        \item OFS efficiency \\
+%            How much difference between OFSPD signal and Excitation input of OFS
+%        \item OFSPD vs Tx, Rx, WS \\
+%	    Calibrate the OFS
+%    \end{enumerate}
     
     \subsubsection{Overall delay}
 In LIGO case, they have overall delay at order of 240 $\mu s$ \cite{ligo:inj}\\
@@ -653,7 +701,8 @@ We may prepare all the injection file in the unit of strain. All the issue due t
             \item Check result in Y1\_PD\_OFS, Y1\_PD\_RX, Y1\_PD\_TX, Y2\_PD\_OFS, Y2\_PD\_RX, Y2\_PD\_TX. 
         \end{enumerate}
         \red{Could we use diaggui to do the swept-sine measurement? }\\
-        
+
+\subsection{Beam Position Monitoring Test}
 
 \subsection{}
 \section{Summary}
