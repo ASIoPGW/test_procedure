@@ -29,8 +29,8 @@ For the electronic tests, we test the performance of Optical Follower Servo chas
 		\begin{center}
 			\begin{tabularx}{\textwidth}{|c *{5}{|Y}|}
 				\hline
-				\multirow{2}{*}{\textbf{Voltage}} & \multirow{2}{*}{\textbf{Current}}  & \multicolumn{2}{ c|}{\multirow{2}{*}{\textbf{Observed Current}}}  & \multicolumn{2}{ c|}{\textbf{Front Panel LEDs On,}}\\
-				& & \multicolumn{2}{ c|}{ } & \multicolumn{2}{ c|}{\textbf{$\pm$15V and $\pm$12V?}}\\ \hline
+				\multirow{3}{*}{\textbf{Voltage}} & \multirow{3}{*}{\textbf{Current}}  & \multicolumn{2}{ c|}{\multirow{2}{*}{\textbf{Observed Current}}}  & \multicolumn{2}{ c|}{\textbf{Front Panel LEDs On,}}\\
+				& & \multicolumn{2}{ c|}{ } & \multicolumn{2}{ c|}{\textbf{$\pm$15V and $\pm$12V?}}\\ \cline{3-6}
 				& & OFS1 & OFS2 & OFS1 & OFS2 \\ \hline
 				+18V & 20mA$\pm$ 5mA &  &  &  & \\ \hline
 				-18V & 19mA$\pm$ 5mA  &  &  &  & \\
@@ -41,7 +41,7 @@ For the electronic tests, we test the performance of Optical Follower Servo chas
 		\begin{center}
 			\begin{tabularx}{\textwidth}{|c *{3}{|Y}|}
 				\hline
-				\textbf{Pins} & \textbf{Voltage Expected} & \multicolumn{2}{ c|}{\textbf{Voltage Observed}}\\ \hline
+				\multirow{2}{*}{\textbf{Pins} }& \multirow{2}{*}{\textbf{Voltage Expected}} & \multicolumn{2}{ c|}{\textbf{Voltage Observed}}\\ \cline{3-4}
 				& & OFS1 & OFS2 \\ \hline
 				J1 Pin2(+) and 7(GND) & +15V$\pm$ 0.5V &  & \\ \hline
 				J1 Pin 3(-) and 7(GND) & -15V$\pm$ 0.5V &  & \\
@@ -62,7 +62,7 @@ For the electronic tests, we test the performance of Optical Follower Servo chas
 		\begin{center}
 			\begin{tabularx}{\textwidth}{|c *{3}{|Y}|}
 				\hline
-				\textbf{Output} & \textbf{Expected} & \multicolumn{2}{ c|}{\textbf{Observed}}\\ \hline
+				\multirow{2}{*}{\textbf{Output}} & \multirow{2}{*}{\textbf{Expected}} & \multicolumn{2}{ c|}{\textbf{Observed}}\\ \cline{3-4}
 				& & OFS1 & OFS2 \\ \hline 
 				"PD Mon" BNC & 0dB$\pm$0.5dB Flat & & \\ \hline
 				"Err Mon" BNC & 0dB$\pm$0.5dB Flat & & \\ \hline
@@ -70,15 +70,15 @@ For the electronic tests, we test the performance of Optical Follower Servo chas
 				Pins 6(+) and 14(-) & read differentially(A-B)  & &\\ \hline
 				“To/From PCal Interface” & 0dB$\pm$0.5dB Flat & & \\
 				Pins 7(+) and 15(-) & read differentially(A-B)  & &\\ \hline
-				\multirow{2}{*}{“Out Mon” BNC} & -8.11dB at DC with 2 poles @ & & \\
+				\multirow{4}{*}{“Out Mon” BNC} & -8.11dB at DC with 2 poles @ & & \\
 				& 3KHz, and 1 zero @30KHz & &\\ \hline
-				“Out Mon” BNC & -88.14 deg$\pm$2deg  of phase at 3KHz& &\\ \hline
-				\multirow{2}{*}{“Out Mon” BNC} & Rising to -125.93deg$\pm$2deg & &\\ 
+				\multirow{2}{*}{“Out Mon” BNC} & -88.14 deg$\pm$2deg  of phase at 3KHz& &\\ \hline
+				\multirow{3}{*}{“Out Mon” BNC} & Rising to -125.93deg$\pm$2deg & &\\ 
 				&of phase @ 30KHz& &\\ \hline
-				\multirow{2}{*}{“To AOM” BNC} & -8.11dB at DC with 2 poles @ & & \\
+				\multirow{4}{*}{“To AOM” BNC} & -8.11dB at DC with 2 poles @ & & \\
 				& 3KHz, and 1 zero @30KHz & &\\ \hline
-				“To AOM” BNC & -88.142deg$\pm$2deg of phase at 3KHz & &\\ \hline
-				\multirow{2}{*}{“To AOM” BNC} & Rising to -125.93deg$\pm$2deg & &\\ 
+				\multirow{2}{*}{“To AOM” BNC} & -88.142deg$\pm$2deg of phase at 3KHz & &\\ \hline
+				\multirow{3}{*}{“To AOM” BNC} & Rising to -125.93deg$\pm$2deg & &\\ 
 				&of phase @ 30KHz& &\\ \hline
 			\end{tabularx}
 		\end{center}
@@ -88,14 +88,14 @@ For the electronic tests, we test the performance of Optical Follower Servo chas
 		\begin{center}
 			\begin{tabularx}{\textwidth}{|c *{4}{|Y}|}
 				\hline
-				\textbf{Input} & \textbf{Output} & \textbf{Expected} & \multicolumn{2}{ c|}{\textbf{Observed}}\\ \hline
+				\multirow{2}{*}{\textbf{Input}} & \multirow{2}{*}{\textbf{Output}} & \multirow{2}{*}{\textbf{Expected}} & \multicolumn{2}{ c|}{\textbf{Observed}}\\ \cline{4-5}
 				& & & OFS1 & OFS2 \\ \hline
-				“From DAC”  & \multirow{3}{*}{“To AOM” BNC} & -8.11dB at DC with 2 & & \\
+				“From DAC”  & \multirow{5}{*}{“To AOM” BNC} & -8.11dB at DC with 2 & & \\
 				connector Pins & & poles @ 3KHz, and 1 & &\\
-				1(+) and 6(GND) & & zero@30KHz & &\\ \hline
-				\multirow{2}{*}{“CLTF Test In” BNC}  & \multirow{3}{*}{“To AOM” BNC} & -8.11dB at DC with 2 & &\\
+				1(+) and 6(GND) & & zero @30KHz & &\\ \hline
+				\multirow{5}{*}{“CLTF Test In” BNC}  & \multirow{5}{*}{“To AOM” BNC} & -8.11dB at DC with 2 & &\\
 				& & poles @ 3KHz, and 1 & &\\
-				& & zero@30KHz & &\\ 
+				& & zero @30KHz & &\\ 
 				\hline
 			\end{tabularx}
 		\end{center}
@@ -104,15 +104,15 @@ For the electronic tests, we test the performance of Optical Follower Servo chas
 		\begin{center}
 			\begin{tabularx}{\textwidth}{|c *{4}{|Y}|}
 				\hline
-				\textbf{Input signal level} & \textbf{Input Gain Level} & \multirow{3}{*}{\textbf{Expected Output}} & \multicolumn{2}{ c|}{\multirow{3}{*}{\textbf{Observed Output}}}\\ 
+				\textbf{Input signal level} & \textbf{Input Gain Level} & \multirow{6}{*}{\textbf{Expected Output}} & \multicolumn{2}{ c|}{\multirow{6}{*}{\textbf{Observed Output}}}\\ 
 				\textbf{“From PCal PD” }& \textbf{“To/From PCal Interface”} & & \multicolumn{2}{ c|}{ }\\
-				\textbf{1(+) and 6(-)} & \textbf{Pin1 and Pin 9(GND)} & & \multicolumn{2}{ c|}{ }\\ \hline
-				& & & OFS1 & OFS2 \\ \hline 
-				\multirow{2}{*}{1$\mbox{V}_{\mbox{p-p}}$}  & \multirow{2}{*}{-9.6V} & 143 $\mbox{mV}_{\mbox{p-p}}$ $\pm$ 10mV& &\\
+				\textbf{1(+) and 6(-)} & \textbf{Pin1 and} & & \multicolumn{2}{ c|}{ }\\ \cline{4-5}
+				& \textbf{Pin 9(GND)} & & OFS1 & OFS2 \\ \hline 
+				\multirow{4}{*}{1$\mbox{V}_{\mbox{p-p}}$}  & \multirow{4}{*}{-9.6V} & 143 $\mbox{mV}_{\mbox{p-p}}$ $\pm$ 10mV& &\\
 				& &  or 55 $\mbox{mV}_{\mbox{rms}}$ $\pm$ 10mV & &\\ \hline
-				\multirow{2}{*}{1$\mbox{V}_{\mbox{p-p}}$}  & \multirow{2}{*}{0V} & 4.12 $\mbox{V}_{\mbox{p-p}}$ $\pm$ 100mV& &\\
+				\multirow{4}{*}{1$\mbox{V}_{\mbox{p-p}}$}  & \multirow{4}{*}{0V} & 4.12 $\mbox{V}_{\mbox{p-p}}$ $\pm$ 100mV& &\\
 				& &  or 1.48 $\mbox{mV}_{\mbox{rms}}$ $\pm$ 10mV & &\\ \hline
-				\multirow{2}{*}{0.03$\mbox{V}_{\mbox{p-p}}$}  & \multirow{2}{*}{+9.6V} & 3.72 $\mbox{mV}_{\mbox{p-p}}$ $\pm$ 10mV& &\\
+				\multirow{4}{*}{0.03$\mbox{V}_{\mbox{p-p}}$}  & \multirow{4}{*}{+9.6V} & 3.72 $\mbox{mV}_{\mbox{p-p}}$ $\pm$ 10mV& &\\
 				& &  or 1.43 $\mbox{mV}_{\mbox{rms}}$ $\pm$ 10mV & &\\ 
 				\hline
 			\end{tabularx}
@@ -123,7 +123,7 @@ For the electronic tests, we test the performance of Optical Follower Servo chas
 		\begin{center}
 			\begin{tabularx}{\textwidth}{|c *{4}{|Y}|}
 				\hline
-				\textbf{Offset Input} & \textbf{Offset Expected} & \multicolumn{2}{ c|}{\textbf{Offset Observed}}\\ \hline
+				\multirow{2}{*}{\textbf{Offset Input}} & \multirow{2}{*}{\textbf{Offset Expected}} & \multicolumn{2}{ c|}{\textbf{Offset Observed}}\\ \cline{3-4}
 				& & OFS1 & OFS2 \\ \hline
 				0V & 0V$\pm$ 0.2V & &\\ \hline
 				1V &  1.5V$\pm$ 0.2V & &  \\ \hline
@@ -135,7 +135,7 @@ For the electronic tests, we test the performance of Optical Follower Servo chas
 		\begin{center}
 			\begin{tabularx}{\textwidth}{|c *{4}{|Y}|}
 				\hline
-				\textbf{Input Frequency} & \textbf{Output Expected} & \multicolumn{2}{ c|}{\textbf{Output Observed}}\\ \hline
+				\multirow{2}{*}{\textbf{Input Frequency}} & \multirow{2}{*}{\textbf{Output Expected}} & \multicolumn{2}{ c|}{\textbf{Output Observed}}\\ \cline{3-4}
 				& & OFS1 & OFS2 \\ \hline
 				100Hz & -0.79V$\pm$0.02V & &\\ \hline
 				1KHz & -0.79V$\pm$0.02V &  &\\ \hline
@@ -165,8 +165,8 @@ For the electronic tests, we test the performance of Optical Follower Servo chas
 		\begin{center}
 			\begin{tabularx}{\textwidth}{|c *{5}{|Y}|}
 				\hline
-				\multirow{2}{*}{\textbf{Voltage}} & \multirow{2}{*}{\textbf{Current}}  & \multicolumn{2}{ c|}{\multirow{2}{*}{\textbf{Observed Current}}}  & \multicolumn{2}{ c|}{\textbf{Front and Back Panel,}}\\
-				& & \multicolumn{2}{ c|}{ } & \multicolumn{2}{ c|}{\textbf{$\pm$15V LEDs On}}\\ \hline
+				\multirow{3}{*}{\textbf{Voltage}} & \multirow{3}{*}{\textbf{Current}}  & \multicolumn{2}{ c|}{\multirow{2}{*}{\textbf{Observed Current}}}  & \multicolumn{2}{ c|}{\textbf{Front and Back Panel,}}\\
+				& & \multicolumn{2}{ c|}{ } & \multicolumn{2}{ c|}{\textbf{$\pm$15V LEDs On}}\\ \cline{3-6}
 				& & Interface1 & Interface2 & Interface1 & Interface2 \\ \hline
 				+18V & 130mA$\pm$ 15mA &   & & & \\ \hline
 				-18V & 130mA$\pm$ 15mA &   & & &\\
@@ -179,9 +179,9 @@ For the electronic tests, we test the performance of Optical Follower Servo chas
 			\item \textbf{Optical follower Continuity:}\\
 			Attach a 15-pin DSub Breakout board to the connector labled “To/From Optical Follower”, and a 9-pin Dsub Breakout to the connector labled “To Anti-Alias Chassis” and Check for continuity (any “No” answer is a fail):
 			\begin{center}\
-				\begin{tabularx}{\textwidth}{|c *{3}{|Y}|}
+				\begin{tabularx}{0.9\textwidth}{|c *{3}{|Y}|}
 					\hline
-					\textbf{EtherCAT Pin} & \textbf{Optical Follower Pin} & \multicolumn{2}{ c|}{\textbf{Continuous (Yes/No)?}}\\ \hline
+					\multirow{2}{*}{\textbf{EtherCAT Pin}} & \multirow{2}{*}{\textbf{Optical Follower Pin}} & \multicolumn{2}{ c|}{\textbf{Continuous (Yes/No)?}}\\ \cline{3-4}
 					& & Interface1 & Interface2 \\ \hline
 					J2-Pin 1 & J4-Pin 1 & & \\ \hline
 					J2-Pin 20 & J4-Pin 9  & & \\ \hline
@@ -195,9 +195,9 @@ For the electronic tests, we test the performance of Optical Follower Servo chas
 				\end{tabularx}
 			\end{center}
 			\begin{center}
-				\begin{tabularx}{\textwidth}{|c *{3}{|Y}|}
+				\begin{tabularx}{0.9\textwidth}{|c *{3}{|Y}|}
 					\hline
-					\textbf{Anti-Alias Pin} & \textbf{Optical Follower Pin} & \multicolumn{2}{ c|}{\textbf{Continuous (Yes/No)?}}\\ \hline
+					\multirow{2}{*}{\textbf{Anti-Alias Pin}} & \multirow{2}{*}{\textbf{Optical Follower Pin}} & \multicolumn{2}{ c|}{\textbf{Continuous (Yes/No)?}}\\ \cline{3-4}
 					& & Interface1 & Interface2 \\ \hline
 					J1-Pin 1 & J4-Pin 6 & & \\ \hline
 					J1-Pin 6 & J4-Pin 14  & & \\ \hline
@@ -211,8 +211,8 @@ For the electronic tests, we test the performance of Optical Follower Servo chas
 			\begin{center}
 				\begin{tabularx}{\textwidth}{|c *{3}{|Y}|}
 					\hline
-					\textbf{EtherCAT Pin} & \textbf{Laser Power and AOM Pin} & \multicolumn{2}{ c|}{\textbf{Continuous (Yes/No)?}}\\ \hline
-					& & Interface1 & Interface2 \\ \hline
+					\multirow{2}{*}{\textbf{EtherCAT Pin}} & \textbf{Laser Power and } & \multicolumn{2}{ c|}{\textbf{Continuous (Yes/No)?}}\\ \cline{3-4}
+					& \textbf{AOM Pin} & Interface1 & Interface2 \\ \hline
 					J2-Pin 3 & J5-Pin 1  & & \\ \hline
 					J2-Pin 22 & J5-Pin 9  & &  \\ \hline
 					J2-Pin 31 & J5-Pin 2  & & \\ \hline
@@ -230,7 +230,7 @@ For the electronic tests, we test the performance of Optical Follower Servo chas
 			\begin{center}
 				\begin{tabularx}{\textwidth}{|c *{3}{|Y}|}
 					\hline
-					\textbf{EtherCAT Pin} & \textbf{WS PD Pin} & \multicolumn{2}{ c|}{\textbf{Continuous (Yes/No)?}}\\ \hline
+					\multirow{2}{*}{\textbf{EtherCAT Pin}} & \multirow{2}{*}{\textbf{WS PD Pin}} & \multicolumn{2}{ c|}{\textbf{Continuous (Yes/No)?}}\\ \cline{3-4}
 					& & Interface1 & Interface2 \\ \hline
 					J2-Pin 4 & J7-Pin 1  & & \\ \hline
 					J2-Pin 23 & J7-Pin 6  & & \\ 
@@ -246,20 +246,20 @@ For the electronic tests, we test the performance of Optical Follower Servo chas
 		\begin{center}
 			\begin{tabularx}{\textwidth}{|c *{5}{|Y}|}
 				\hline
-				\textbf{Pin to connect with Pin 12} & \textbf{Switch positions} & \textbf{Readout pin} & \textbf{Expected signal} & \multicolumn{2}{ c|}{\textbf{Signal present (Yes/No)?}}\\ \hline
-				& & & & Interface1 & Interface2 \\ \hline
-				\multirow{2}{*}{“To Shutter” Pin 6} & \multirow{2}{*}{Remote} & “EtherCAT”  & +15V$\pm$0.5V,  & & \\
+				\multirow{2}{*}{\textbf{Pin to connect with Pin 12}} & \textbf{Switch} & \textbf{Readout} & \textbf{Expected} & \multicolumn{2}{ c|}{\textbf{Signal present (Yes/No)?}}\\ \cline{5-6}
+				& \textbf{positions} & \textbf{pin} & \textbf{signal} & Interface1 & Interface2 \\ \hline
+				\multirow{3}{*}{“To Shutter” Pin 6} & \multirow{3}{*}{Remote} & “EtherCAT”  & +15V$\pm$0.5V,  & & \\
 				& & Pin 32 & “Open” LED lit && \\ \hline 
-				\multirow{2}{*}{“To Shutter” Pin 5} & \multirow{2}{*}{Remote} & “EtherCAT”  & +15V$\pm$0.5V, & &\\ 
+				\multirow{3}{*}{“To Shutter” Pin 5} & \multirow{3}{*}{Remote} & “EtherCAT”  & +15V$\pm$0.5V, & &\\ 
 				& & Pin 14 & “Closed” LED lit & &\\ \hline 
-				“Optical Follower” Pin 5 & Remote & “EtherCAT” Pin 33 & +15V$\pm$0.5V & &\\ \hline 
-				“EtherCAT” Pin 30 & Remote & “To Shutter” Pin 1 & +15V$\pm$0.5V & &\\ \hline 
-				“EtherCAT” Pin 30 & Remote & “To Shutter” Pin 3 & +15V$\pm$0.5V & &\\ \hline 
-				“EtherCAT” Pin 30 & Local & “To Shutter” Pin 1 & +15V$\pm$0.5V & &\\ \hline 
-				“EtherCAT” Pin 30 & Local & “To Shutter” Pin 3 & 0V & &\\ \hline 
-				\multirow{2}{*}{“EtherCAT” Pin 30} & Local, pushing  &“To Shutter” & \multirow{2}{*}{+15V$\pm$0.5V} & &\\
+				\multirow{2}{*}{“Optical Follower” Pin 5} & \multirow{2}{*}{Remote} & “EtherCAT” Pin 33 & \multirow{2}{*}{+15V$\pm$0.5V} & &\\ \hline 
+				\multirow{3}{*}{“EtherCAT” Pin 30} & \multirow{3}{*}{Remote} & “To Shutter” Pin 1 & \multirow{3}{*}{+15V$\pm$0.5V} & &\\ \hline 
+				\multirow{3}{*}{“EtherCAT” Pin 30} & \multirow{3}{*}{Remote} & “To Shutter” Pin 3 & \multirow{3}{*}{+15V$\pm$0.5V} & &\\ \hline 
+				\multirow{3}{*}{“EtherCAT” Pin 30} & \multirow{3}{*}{Local} & “To Shutter” Pin 1 & \multirow{3}{*}{+15V$\pm$0.5V} & &\\ \hline 
+				\multirow{3}{*}{“EtherCAT” Pin 30} & \multirow{3}{*}{Local} & “To Shutter” Pin 3 & \multirow{3}{*}{0V} & &\\ \hline 
+				\multirow{4}{*}{“EtherCAT” Pin 30} & Local, pushing  &“To Shutter” & \multirow{4}{*}{+15V$\pm$0.5V} & &\\
 				& “Open” button & Pin 3 & & &\\ \hline
-				\multirow{2}{*}{“EtherCAT” Pin 30} & Local, pushing  & “To Shutter” & \multirow{2}{*}{0V} & &\\ 
+				\multirow{4}{*}{“EtherCAT” Pin 30} & Local, pushing  & “To Shutter” & \multirow{4}{*}{0V} & &\\ 
 				& “Close” button & Pin 1 & & &\\
 				\hline
 			\end{tabularx}
@@ -270,10 +270,10 @@ For the electronic tests, we test the performance of Optical Follower Servo chas
 			\item \textbf{Signal Tests:}\\
 			Using a network analyzer, apply a 5Vp-p, signal and sweep from 100Hz to 100KHz to the appropriate pins in the table below. Read out the signal differentially (A-B) for the Anti-Alias pins, and single-ended for the BNC monitors, and verify that the signal is correct across the entire frequency range:
 			\begin{center}
-				\begin{tabularx}{\textwidth}{|c *{3}{|Y}|}
+				\begin{tabularx}{0.9\textwidth}{|c *{3}{|Y}|}
 					\hline
-					\textbf{Input} & \textbf{Output Pins (Expected 0dB +/- 0.5dB)} & \multicolumn{2}{ c|}{\textbf{Observed Output}}\\ \hline
-					& & Interface1 & Interface2 \\ \hline
+					\multirow{3}{*}{\textbf{Input}} & \textbf{Output Pins } & \multicolumn{2}{ c|}{\textbf{Observed Output}}\\ \cline{3-4}
+					& \textbf{(Expected 0dB $\pm$ 0.5dB)} & \multirow{2}{*}{Interface1} & \multirow{2}{*}{Interface2} \\ \hline
 					“Rx PD” Pins 1(+) and 6(-) & “To Anti-Alias” Pins 2(+) and 7(-)  & & \\ \hline
 					“Rx PD” Pins 1(+) and 6(-) & Rx PD Mon BNC & &\\ \hline
 					“Tx PD” Pins 1(+) and 6(-) & “To Anti-Alias” Pins 3(+) and 8(-) & &\\ \hline
@@ -288,8 +288,8 @@ For the electronic tests, we test the performance of Optical Follower Servo chas
 			\begin{center}
 				\begin{tabularx}{\textwidth}{|c *{3}{|Y}|}
 						\hline
-						\textbf{Input} & \textbf{Output Pins (Expected 6dB +/- 0.5dB)} & \multicolumn{2}{ c|}{\textbf{Observed Output}}\\ \hline
-						& & Interface1 & Interface2 \\ \hline
+						\multirow{3}{*}{\textbf{Input}} & \textbf{Output Pins} & \multicolumn{2}{ c|}{\textbf{Observed Output}}\\ \cline{3-4}
+						& \textbf{(Expected 6dB +/- 0.5dB)} & \multirow{2}{*}{Interface1} & \multirow{2}{*}{Interface2} \\ \hline
 						“Alt. WSPD” BNC & “EtherCAT” Pins 4(+) and 23(-)“& & \\ \hline
 						“Alt. WSPD” BNC & WS PD Mon BNC & & \\
 						\hline
@@ -300,7 +300,7 @@ For the electronic tests, we test the performance of Optical Follower Servo chas
 			\begin{center}
 				\begin{tabularx}{\textwidth}{|c *{3}{|Y}|}
 						\hline
-						\textbf{Pin} & \textbf{Expected Voltage} & \multicolumn{2}{ c|}{\textbf{Observed Voltage}}\\ \hline
+						\multirow{2}{*}{\textbf{Pin}} & \multirow{2}{*}{\textbf{Expected Voltage}} & \multicolumn{2}{ c|}{\textbf{Observed Voltage}}\\ \cline{3-4}
 						& & Interface1 & Interface2 \\ \hline
 						“Rx PD” Pins 2(+) and 7(GND) & +15V +/- 0.5V & &\\ \hline
 						“Rx PD” Pins 3(-) and 7(GND) & -15V +/- 0.5V & &\\ \hline
@@ -317,8 +317,8 @@ For the electronic tests, we test the performance of Optical Follower Servo chas
 		\begin{center}
 			\begin{tabularx}{\textwidth}{|c *{3}{|Y}|}
 				\hline
-				\textbf{Input} & \textbf{Output Pins (Expected 6dB +/- 0.5dB)} & \multicolumn{2}{ c|}{\textbf{Observed Output}}\\ \hline
-				& & Interface1 & Interface2 \\ \hline
+				\multirow{3}{*}{\textbf{Input}} & \textbf{Output Pins} & \multicolumn{2}{ c|}{\textbf{Observed Output}}\\ \cline{3-4}
+				&\textbf{(Expected 6dB +/- 0.5dB)} & \multirow{2}{*}{Interface1} & \multirow{2}{*}{Interface2} \\ \hline
 				“Laser Power and AOM” Pin 3(+) and 11(-) & “EtherCAT” Pins 8(+) and 27(-) & & \\ \hline
 				“Laser Power and AOM” Pin 4(+) and 12(-) & “EtherCAT” Pins 9(+) and 28(-) & & \\
 				\hline
@@ -329,8 +329,8 @@ For the electronic tests, we test the performance of Optical Follower Servo chas
 		\begin{center}
 			\begin{tabularx}{\textwidth}{|c *{4}{|Y}|}
 				\hline
-				\textbf{Input Pins} & \textbf{Output Pins} & \textbf{Expected Output} & \multicolumn{2}{ c|}{\textbf{Observed Output}}\\ \hline
-				& & & Interface1 & Interface2 \\ \hline
+				\multirow{2}{*}{\textbf{Input Pins}} & \multirow{2}{*}{\textbf{Output Pins}} & \textbf{Expected } & \multicolumn{2}{ c|}{\textbf{Observed Output}}\\ \cline{4-5}
+				& & \textbf{Output} & Interface1 & Interface2 \\ \hline
 				“Tx Temp. and Interlock” Pin 6 & “EtherCAT” Pins 5(+) and 24(-) & 20V +/- 0.1V & &\\ \hline
 				“Rx Temp. and Interlock” Pin 6 & “EtherCAT” Pins 6(+) and 25(-) & 20V +/- 0.1V & &\\
 				\hline
@@ -357,15 +357,15 @@ Transmittance of the AOM depend on the input voltage of the AOM. We can change t
 T=A_1 \sin{\left( \pi \frac{V}{A_2}\right)},
 \end{equation}
 where V is the input voltage,$ A_1$ and $A_2$ are measured values. We estimate the $A_1$ and $A_2$ by fitting.
-			\begin{center}
-				\resizebox{5cm}{!}{
-					\begin{tabular}{| c | c | c | }
-						\hline
-						 & $A_1$ &$A_2$ \\ \hline
-						 Path1&& \\ \hline
-                                                   Path2&& \\ \hline
-                                                   \end{tabular}}
-                                                   \end{center}
+\begin{center}
+	\resizebox{5cm}{!}{
+	\begin{tabular}{| c | c | c | }
+			\hline
+			& $A_1$ &$A_2$ \\ \hline
+			Path1&& \\ \hline
+			Path2&& \\ \hline
+	\end{tabular}}
+\end{center}
 
 \subsection{Mode matching and beam quality}
 First mount the laser isolator, half-wave plate and polarizer on the optical table, and use the \underline{\qquad\qquad} beam profiler to measure the beam width of our laser. Use power meter to measure the laser power, and rotate the half-wave plate in order to reduce the laser power to below the beam profiler requirement. Use the Iris Diaphragm to check whether the laser beam is parallel to the optical table or not, and mount the beam profiler and start the beam width measurement. Measure the beam width at different points. For each point, measure the beam width for one minute, and calculate the mean value and standard deviation. Finally fit the data, and calculate the beam waist and beam quality. The measured beam profile will be shown like Figure~\ref{fig:beam_profile}:
