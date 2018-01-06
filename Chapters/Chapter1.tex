@@ -420,7 +420,7 @@ After measuring the beam profile around AOM, install two AOMs at the beam waist 
 Adjust the height to make the beam inject at the center of the lens to prevent from distortion. Place the final mirror and picomotor, send the beam from transmitter module to receiver module, and reflect the beam into integrating sphere in receiver module.
 
 \section{Transfer function measurement}
-
+\label{tfMeasure}
 According to the OFS electric circuit, the open loop transfer function of OFS is:
 \begin{eqnarray}
 T_{open}=\frac{V_{out}}{V_{in}}=&\frac{1}{1+j\omega(5k)(20p)}\frac{G}{1+j\omega(2k)(27n)}\frac{1+j\omega(0.2k)(27n)}{1+j\omega(2.2k)(27n)}\frac{1}{3}\frac{1}{1+j\omega(5k)(20p)}\\
@@ -448,10 +448,10 @@ Figure~\ref{fig:amplitude} and Figure~\ref{fig:phase} show the simulation result
 \end{figure}
 
 
-\subsection{OFS Open loop measurement}
-
+\subsection{Open loop measurement}
+\label{OFS_OLTF}
 Turn on the laser and wait for 2 hours until the laser become stable. Open the loop of OFS, set the gain to 10V, and inject \underline{\qquad} $\mbox{V}_{\mbox{p-p}}$ signal to OFS. Connect the injected signal and output signal to spectrum analyzer and measure transfer function of open loop.
-\subsection{OFS Close loop measurement}
+\subsection{Close loop measurement}
 Close the loop, set the OFS gain to 10V, and send 1$\mbox{V}_{\mbox{p-p}}$ signal to OFS. Connect the injected signal and output signal to spectrum analyzer and measure transfer function of close loop.
 \\\\
 \noindent Measure the open loop and close loop transfer function for both APC and ACC mode, and compare the result to the simulation result.
@@ -497,7 +497,7 @@ RPN=\frac{\delta I}{I}=\sqrt{2e/I}.
 				}
 			\end{center}
 \subsubsection{Electric noise}
-We mesure the electric noise. To under stand the electric noise of the feedback loop, we need to write down each noise source.
+We measure the electric noise. To under stand the electric noise of the feedback loop, we need to write down each noise source.
 Figure~\ref{fig:noise} is the assumed model of OFS, where input laser power is $P_{in}=P_0 + n_{laser}$.
 The output from OFSPD is described as
 \begin{equation}
