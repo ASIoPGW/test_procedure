@@ -452,6 +452,7 @@ Figure~\ref{fig:amplitude} and Figure~\ref{fig:phase} show the simulation result
 \label{OFS_OLTF}
 Turn on the laser and wait for 2 hours until the laser become stable. Open the loop of OFS, set the gain to 10V, and inject \underline{\qquad} $\mbox{V}_{\mbox{p-p}}$ signal to OFS. Connect the injected signal and output signal to spectrum analyzer and measure transfer function of open loop.
 \subsection{Close loop measurement}
+\label{OFS_CLTF}
 Close the loop, set the OFS gain to 10V, and send 1$\mbox{V}_{\mbox{p-p}}$ signal to OFS. Connect the injected signal and output signal to spectrum analyzer and measure transfer function of close loop.
 \\\\
 \noindent Measure the open loop and close loop transfer function for both APC and ACC mode, and compare the result to the simulation result.
@@ -622,12 +623,12 @@ The capability of Hardware Injection using Pcal is limited by $1/f^2$ Force-to-L
 \subsection{Inverse Actuation Filters}
 We need to create “inverse actuation filters” in front of injection channel to compensate the effect of $1/f^2$ force-to-length transferfunction, AI filter, overall gain, and OFS transfer function\cite{ligo:inj}. Besides, the time(phase) delay of each stage cannot be correct by the “inverse actuation filters”, which suppose to be an causal IIR filter if we implement it by using CDS-filter. Therefore, we have to measure this delay and take it into account when we analyze our data.
     \subsubsection{Inverse Transfer Functions}
-        We may use the result from Sec.(\ref{tfMeasure}) ,swapping its pole and zero, fine-turning them to make corresponding IIR stable.
+        We may use the result from Sec.~\ref{tfMeasure} ,swapping its pole and zero, fine-turning them to make corresponding IIR stable.
         \begin{enumerate}
             \item Force-to-Length Transfer Function
             \item Anti-Imaging Chassis   
             \item OFS Transfer Function \\
-            Using the result of OFS close loop transfer function measurement\ref{OFS_OLTF} to create it's inverse filter. 
+            Using the result of OFS close loop transfer function measurement in Sec.~\ref{OFS_CLTF} to create it's inverse filter. 
         \end{enumerate}
 
 
