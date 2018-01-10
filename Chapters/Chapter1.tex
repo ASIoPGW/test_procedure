@@ -455,11 +455,16 @@ S^{'}=R(\theta)MR^{-1}(\theta)S=
 Therefore, the Strokes vector remains the same when half wave plate rotates every 90 degrees.
 Rotate the half wave plate, measure the power, and see if the data matches the $\sin(4\theta)$ function.
 \subsection{Transmittance of AOM}
+The diffraction efficiency (DE) of AOM is defined as the ratio of zeroth and first order output beams of AOM:
+\begin{equation}
+DE=\frac{\mathrm{First order(RF on)}}{\mathrm{Zeroth orfer(RF out)}}.
+\end{equation}
 Transmittance of the AOM depend on the input voltage of the AOM. We can change the Gain and offset of the AOM through the digital system. To work the feed back effectively, we need to find the optimized operating point. We measure the transmittance of AOM by changing input voltage. The function can be described as the following equation:
 \begin{equation}
 T=A_1 \sin{\left( \pi \frac{V}{A_2}\right)},
 \end{equation}
 where V is the input voltage,$ A_1$ and $A_2$ are measured values. We estimate the $A_1$ and $A_2$ by fitting.
+
 \begin{center}
 	\resizebox{5cm}{!}{
 	\begin{tabular}{| c | c | c | }
@@ -628,11 +633,6 @@ We normalize the $N_{in}$ with PD output as follows:
 \label{fig:noise} 
 \end{center}
 \end{figure}
-
-\paragraph{Laser noise}
-\paragraph{AOM noise}
-\paragraph{feedback noise}
-\paragraph{PD noise}
 
 
 \subsection{Relative power noise}
