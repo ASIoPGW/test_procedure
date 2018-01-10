@@ -339,8 +339,67 @@ For the electronic measurements, we test the performance of Optical Follower Ser
 		Move the jumpers WSPDA and WSPDB back to the “WSPD” position.
 	\end{enumerate}
 \end{enumerate}
-\subsection{Beam Position Monitoring Test}
+\subsection{Beam Position Monitoring Board Test}
+\begin{enumerate}
+	\item \textbf{Overview}\\
+	The PCal 
+	
+	\item \textbf{Test Equipment}
+	\begin{enumerate}
+		\item Power Supply capable of +/- 18V
+		\item Voltage Calibrator, or adjustable power supply
+		\item SR785 Network Analyzer, or equivalent
+		\item Dsub Breakout boards (9-pin, 15-pin, 37-pin)
+		\item Digital Multimeter (DMM)
+	\end{enumerate}
+	
+	\item \textbf{Electrical Tests}
+	\begin{enumerate}
+		\item Turn on the power supplies, and record the current in the table below.
+		\begin{center}
+			\begin{tabularx}{\textwidth}{|c *{5}{|Y}|}
+				\hline
+				\multirow{3}{*}{\textbf{Voltage}}   & \multirow{3}{*}{\textbf{Current}}  &
+				    \multicolumn{2}{ c|}{\multirow{2}{*}{\textbf{Observed Current}}}  &
+				    \multicolumn{2}{ c|}{\textbf{Front and Back Panel,}} \\
+				    & & \multicolumn{2}{ c|}{ } & \multicolumn{2}{ c|}{\textbf{$\pm$15V LEDs On}}\\ 
+				    \cline{3-6} & & Interface1 & Interface2 & Interface1 & Interface2 \\ \hline
+				+18V & 130mA$\pm$ 15mA &   & & & \\ \hline
+				-18V & 130mA$\pm$ 15mA &   & & &\\
+				\hline
+			\end{tabularx}
+		\end{center}
+		
+		
+		\item \textbf{Quadrant Photodiode input tests:}
+		\begin{enumerate}
+			\item \textbf{Signal Tests:}\\
+			Using a network analyzer, apply a 5Vp-p, signal and sweep from 100Hz to 100KHz to the appropriate pins in the table below. Read out the signal differentially (A-B) for the Anti-Alias pins, and single-ended for the BNC monitors, and verify that the signal is correct across the entire frequency range:
+			\begin{center}
+				\begin{tabularx}{0.9\textwidth}{|c *{3}{|Y}|}
+					\hline
+					\multirow{3}{*}{\textbf{Input}} & \textbf{Output Pins } & \multicolumn{2}{ c|}{\textbf{Observed Output}}\\ \cline{3-4}
+					& \textbf{(Expected 0dB $\pm$ 0.5dB)} & \multirow{2}{*}{Interface1} & \multirow{2}{*}{Interface2} \\ \hline
+					“Rx PD” Pins 1(+) and 6(-) & “To Anti-Alias” Pins 2(+) and 7(-)  & & \\ \hline
+					“Rx PD” Pins 1(+) and 6(-) & Rx PD Mon BNC & &\\ \hline
+				\end{tabularx}
+			\end{center}
 
+			\item \textbf{Power to PD tests:}\\
+			The front panel connectors supply power to the remote photodiode boxes. These tests check to make sure the voltages are present.
+			\begin{center}
+				\begin{tabularx}{\textwidth}{|c *{3}{|Y}|}
+						\hline
+						\multirow{2}{*}{\textbf{Pin}} & \multirow{2}{*}{\textbf{Expected Voltage}} & \multicolumn{2}{ c|}{\textbf{Observed Voltage}}\\ \cline{3-4}
+						& & Interface1 & Interface2 \\ \hline
+						“Rx PD” Pins 2(+) and 7(GND) & +15V +/- 0.5V & &\\ \hline
+						“Rx PD” Pins 3(-) and 7(GND) & -15V +/- 0.5V & &\\ \hline
+					\end{tabularx}
+			\end{center}
+		\end{enumerate}
+
+	\end{enumerate}
+\end{enumerate}
 
 \subsection{Digital System Test}
     \subsubsection{Anti-Imaging Chassis}
