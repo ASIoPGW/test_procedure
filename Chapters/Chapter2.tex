@@ -24,7 +24,18 @@ To reduce the noise, we tried the following things:
 \paragraph{Open loop gain}
 
 
+\subsection{Injection Test}
+\subsubsection{Time delay measurement}
 
+To investigate the time delay of PCal system, we injected some Sine-Gaussian signal.
+ Sine-Gaussian signal for our injection test is defined as Eq.~\ref{eq:singaussian}
+\begin{equation}
+\label{eq:singaussian}
+    A \exp\left(-\frac{(t-t_0)^2}{\tau^2}\right) \cos ( 2 \pi f_0 (t-t_0))
+\end{equation}
+\begin{equation*}
+   \tau = \frac{Q}{ \sqrt{2} \pi f_0}
+\end{equation*}
 
 
 \section{Run2 (201702; Toyama)}
