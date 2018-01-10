@@ -38,6 +38,31 @@ To investigate the time delay of PCal system, we injected some Sine-Gaussian sig
 \end{equation*}
 
 
+
+% Requires the booktabs if the memoir class is not being used
+\begin{table}[htbp]
+   \centering
+   %\topcaption{Table captions are better up top} % requires the topcapt package
+   \begin{tabular}{ rrcc } % Column formatting, @{} suppresses leading/trailing space
+      \toprule
+%      \multicolumn{2}{c}{Item} \\
+%      \cmidrule(r){1-2} % Partial rule. (r) trims the line a little bit on the right; (l) & (lr) also possible
+      $A$ (Volts)   & $f_0$ (Hz) & Injected GPS Time (~$t_0-10$ s~) & OFS\_PD GPS Time (s) \\
+      \midrule
+        1 & 7 & 13.65  \\
+        1 & 35      &  &\\
+        1 & 330     &   &\\
+        1 & 1k      &   &\\
+        1 & 3k      &   &\\
+      \bottomrule
+   \end{tabular}
+   \caption{Time delay measurement results}
+   \label{tab:timedelay}
+\end{table}
+
+
+
+
 \section{Run2 (201702; Toyama)}
 
 \section{Run3 (201703; KAGRA Y-end)}
