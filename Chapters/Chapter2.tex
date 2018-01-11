@@ -56,27 +56,31 @@ To investigate the time delay of PCal system, we injected some Sine-Gaussian sig
 
 
 
-
-First, We directly connect the Digital System "Excitation" port and OFS\_PD port for measuring time delay caused by Digital System itself.
+\noindent
+First, We directly connect the Digital System "Excitation" port and OFS\_PD port for measuring time delay caused by Digital System itself, the result is summarized in Table~\ref{tab:timedelayDGS}.
 \begin{table}[htbp]
    \centering
    %\topcaption{Table captions are better up top} % requires the topcapt package
    \begin{tabular}{ ccrcc } % Column formatting, @{} suppresses leading/trailing space
       \toprule
 %      \multicolumn{2}{c}{Item} \\
-%      \cmidrule(r){1-2} % Partial rule. (r) trims the line a little bit on the right; (l) & (lr) also possible
-      $A$ (Volts) & $Q$    & $f_0$ (Hz) & DAC 1\_0 GPS Time (s) & ADC 1\_0 Time (s) \\
+                 &    &  & DAC 1\_0              & ADC 1\_0  \\
+
+     \cmidrule(r){3-5} % Partial rule. (r) trims the line a little bit on the right; (l) & (lr) also possible
+      $f_0$ (Hz) &    &  & DAC 1\_0 GPS Time (s) & ADC 1\_0 delayed Time (s) \\
       \midrule
-        1 & 20 & 35   &   &\\
-        1 & 20 & 330  &   &\\
-        1 & 20 & 1k   &   &\\
-        1 & 20 & 3k   &   &\\
+        35  &    &    &   &\\
+        330 &    &    &   &\\
+        1k  &    &    &   &\\
+        3k  &    &    &   &\\
       \bottomrule
    \end{tabular}
-   \caption{Time delay measurement results}
+   \caption{Time delay measurement results of Digital System, $A=$1V, $Q=$20 }
    \label{tab:timedelayDGS}
 \end{table}
 
+\noindent
+Then, We connect "Excitation" port to OFS board and OFS\_PD port to Interface Chassis for measuring time delay between excitation and OFS\_PD, which are corresponding to the input and output of Optical Follower Servo. See Table~\ref{tab:timedelay}.
 
 % Requires the booktabs if the memoir class is not being used
 \begin{table}[htbp]
@@ -86,15 +90,15 @@ First, We directly connect the Digital System "Excitation" port and OFS\_PD port
       \toprule
 %      \multicolumn{2}{c}{Item} \\
 %      \cmidrule(r){1-2} % Partial rule. (r) trims the line a little bit on the right; (l) & (lr) also possible
-      $A$ (Volts) & $Q$    & $f_0$ (Hz) & Injected GPS Time (s) & OFS\_PD GPS Time (s) \\
+       $f_0$ (Hz) &    & & Injected GPS Time (s) & OFS\_PD GPS Time (s) \\
       \midrule
-        1 & 20 & 35   &   &\\
-        1 & 20 & 330  &   &\\
-        1 & 20 & 1k   &   &\\
-        1 & 20 & 3k   &   &\\
+        35  &    &    &   &\\
+        330 &    &    &   &\\
+        1k  &    &    &   &\\
+        3k  &    &    &   &\\
       \bottomrule
    \end{tabular}
-   \caption{Time delay measurement results}
+   \caption{Time delay measurement results of PCal, $A=$1V, $Q=$20}
    \label{tab:timedelay}
 \end{table}
 
