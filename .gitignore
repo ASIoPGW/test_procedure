@@ -2,7 +2,7 @@ Figures/*-eps-converted-to.pdf
 *blx.bib
 *.toc
 *.log
-*.pdf
+main.pdf
 *.out
 *.synctex.gz
 *.aux
