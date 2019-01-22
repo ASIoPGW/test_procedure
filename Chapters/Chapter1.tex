@@ -1,3 +1,4 @@
+% !TEX root =../main.tex
 % Chapter 1
 
 \chapter{Test Procedure} % Main chapter title
@@ -7,6 +8,7 @@
 %----------------------------------------------------------------------------------------
 
 \section{Introduction}
+This is a summary of the test results of the X-end PCal. We had some changes and repairing after these test, so it may not be consistent to the current status. The changes are 18 V DC source and installation of shutters. The repairs are replacement of ICs and resisters. 
 \section{Electronic test}
 For the electronic measurements, we test the performance of Optical Follower Servo chassis and Interface chassis using the test procedures from LIGO (DCC number T1400486-v2 and T1400484-v2), but change the expected value to the value we calculated.
 \subsection{Optical Follower Servo board test}
@@ -15,9 +17,8 @@ For the electronic measurements, we test the performance of Optical Follower Ser
 	The PCal Optical Follower Servo Chassis includes two Optical Follower Servo Boards, and two Optical Follower Back Board. The function of this chassis is to drive two AOMs with a whatever voltage is necessary in order to make the light coming out of the AOM match the sinusoidal shape of the excitation signal.
 	\item \textbf{Test Equipment}
 	\begin{enumerate}
-		\item Power Supply capable of ~$\pm$18V,~2A
+		\item Power Supply capable of ~$\pm$18V,~2A \footnote{If shutter is connected, 2 A is not enough. 2.5 A will be OK.}
 		\item Digital Multimeter (DMM)
-		\item Power Supply
 		\item Oscilloscope
 		\item Function Generator
 		\item Spectrum analyzer
@@ -32,8 +33,8 @@ For the electronic measurements, we test the performance of Optical Follower Ser
 				\multirow{3}{*}{\textbf{Voltage}} & \multirow{3}{*}{\textbf{Current}}  & \multicolumn{2}{ c|}{\multirow{2}{*}{\textbf{Observed Current}}}  & \multicolumn{2}{ c|}{\textbf{Front Panel LEDs On,}}\\
 				& & \multicolumn{2}{ c|}{ } & \multicolumn{2}{ c|}{\textbf{$\pm$15V and $\pm$12V?}}\\ \cline{3-6}
 				& & OFS1 & OFS2 & OFS1 & OFS2 \\ \hline
-				+18V & 20mA$\pm$ 5mA &  &  &  & \\ \hline
-				-18V & 19mA$\pm$ 5mA  &  &  &  & \\
+				+18V & 20mA$\pm$ 5mA & 0.278 A &  A  & on  & on\\ \hline
+				-18V & 19mA$\pm$ 5mA  & 0.259 A &  A & on & on\\
 				\hline
 			\end{tabularx}
 		\end{center}

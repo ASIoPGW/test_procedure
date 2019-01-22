@@ -207,8 +207,8 @@
 %----------------------------------------------------------------------------------------
 
 \DeclareDocumentCommand{\thesistitle} { o m }{
-	\IfBooleanTF{#1} {\DeclareDocumentCommand{\shorttitle}{ }{#1}
-	{\DeclareDocumentCommand{\shorttitle}{}{#2}}}
+%	\IfBooleanTF{#1} {\DeclareDocumentCommand{\shorttitle}{ }{#1}
+%	{\DeclareDocumentCommand{\shorttitle}{}{#2}}}
 	\DeclareDocumentCommand{\@title}{ }{#2}
 	\DeclareDocumentCommand{\ttitle}{ }{#2}
 }
