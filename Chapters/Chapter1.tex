@@ -17,7 +17,7 @@ For the electronic measurements, we test the performance of Optical Follower Ser
 	The PCal Optical Follower Servo Chassis includes two Optical Follower Servo Boards, and two Optical Follower Back Board. The function of this chassis is to drive two AOMs with a whatever voltage is necessary in order to make the light coming out of the AOM match the sinusoidal shape of the excitation signal.
 	\item \textbf{Test Equipment}
 	\begin{enumerate}
-		\item Power Supply capable of ~$\pm$18V,~2A \footnote{If shutter is connected, 2 A is not enough. 2.5 A will be OK.}
+		\item Power Supply capable of ~$\pm$18V,~2A \footnote{If shutter made by Y. Inoue is connected, 2 A is not enough. 2.5 A will be OK.}
 		\item Digital Multimeter (DMM)
 		\item Oscilloscope
 		\item Function Generator
@@ -30,11 +30,11 @@ For the electronic measurements, we test the performance of Optical Follower Ser
 		\begin{center}
 			\begin{tabularx}{\textwidth}{|c *{5}{|Y}|}
 				\hline
-				\multirow{3}{*}{\textbf{Voltage}} & \multirow{3}{*}{\textbf{Current}}  & \multicolumn{2}{ c|}{\multirow{2}{*}{\textbf{Observed Current}}}  & \multicolumn{2}{ c|}{\textbf{Front Panel LEDs On,}}\\
+				\multirow{3}{*}{\textbf{Voltage}} & \multirow{3}{*}{\textbf{Current}} & \multicolumn{2}{ c|}{\multirow{2}{*}{\textbf{Observed Current}}}  & \multicolumn{2}{ c|}{\textbf{Front Panel LEDs On,}}\\
 				& & \multicolumn{2}{ c|}{ } & \multicolumn{2}{ c|}{\textbf{$\pm$15V and $\pm$12V?}}\\ \cline{3-6}
 				& & OFS1 & OFS2 & OFS1 & OFS2 \\ \hline
-				+18V & 20mA$\pm$ 5mA & 0.278 A &  A  & on  & on\\ \hline
-				-18V & 19mA$\pm$ 5mA  & 0.259 A &  A & on & on\\
+				+18V & 20 $\pm$ 5 mA& 0.278 A &    & on  & on\\ \hline
+				-18V  & 19 $\pm$ 5 mA& 0.259 A &   & on & on\\
 				\hline
 			\end{tabularx}
 		\end{center}
@@ -44,42 +44,42 @@ For the electronic measurements, we test the performance of Optical Follower Ser
 				\hline
 				\multirow{2}{*}{\textbf{Pins} }& \multirow{2}{*}{\textbf{Voltage Expected}} & \multicolumn{2}{ c|}{\textbf{Voltage Observed}}\\ \cline{3-4}
 				& & OFS1 & OFS2 \\ \hline
-				J1 Pin2(+) and 7(GND) & +15V$\pm$ 0.5V &  & \\ \hline
-				J1 Pin 3(-) and 7(GND) & -15V$\pm$ 0.5V &  & \\
+				J1 Pin2(+) and 7(GND) & +15V$\pm$ 0.5V & 14.83 & 16.08 \\ \hline
+				J1 Pin 3(-) and 7(GND) & -15V$\pm$ 0.5V & -15.38 & -14.91 \\
 				\hline
 			\end{tabularx}
 		\end{center}
 		
 		\item \textbf{Loop Switch test:}\\
 		Attach a 15-pin D-sub Breakout board to the “To/From PCal Interface” connector, and short together pins 4$\&$12. Read the voltage at pins 5(+) and 12(GND). You should read +12V $\pm$ 0.5V. At the same time, the green front panel LED labeled “Loop Closed” should illuminate.\\
-		+12V present on pin 5?\underline{\qquad\qquad}\\
-		“Loop Closed” LED lit?\underline{\qquad\qquad}\\
+		+12V present on pin 5?\underline{\qquad Yes\qquad}\\
+		“Loop Closed” LED lit?\underline{\qquad Yes\qquad}\\
 		
 	\end{enumerate}
 	\item \textbf{Functional Tests}
 	\begin{enumerate}
 		\item \textbf{PD Signal Tests:}\\
-		PD Signal Tests: With the short for the loop switch still in place, it is possible to test the various signal outputs of the servo electronics. Using a voltage calibrator, put a negative (-) 4.8V level on the servo gain channel (From PCal Interface connector, Pin 1(-4.8V) and Pin 9 (GND)). This should give a gain of 1 (0dB) from the variable Gain amplifier. Input a 100mV signal from the network analyzer into the “From PCal PD” connector Pin 1(+) and Pin 6(-), and sweep from 100Hz to 100KHz. Measure the signals, and fill in the table below:
+		PD Signal Tests: With the short for the loop switch still in place, it is possible to test the various signal outputs of the servo electronics. Using a voltage calibrator, put a negative (-) 3.42 V level on the servo gain channel (From PCal Interface connector, Pin 1(-3.42 V) and Pin 9 (GND)). This should give a gain of 1 (0dB) from the variable gain amplifier. Input a 100mV signal from the network analyzer into the “From PCal PD” connector Pin 1(+) and Pin 6(-), and sweep from 100Hz to 100KHz. Measure the signals, and fill in the table below:
 		\begin{center}
 			\begin{tabularx}{\textwidth}{|c *{3}{|Y}|}
 				\hline
 				\multirow{2}{*}{\textbf{Output}} & \multirow{2}{*}{\textbf{Expected}} & \multicolumn{2}{ c|}{\textbf{Observed}}\\ \cline{3-4}
 				& & OFS1 & OFS2 \\ \hline 
-				"PD Mon" BNC & 0dB$\pm$0.5dB Flat & & \\ \hline
-				"Err Mon" BNC & 0dB$\pm$0.5dB Flat & & \\ \hline
+				"PD Mon" BNC & 0dB$\pm$0.5dB Flat & 0.02 dB & 0.0 dB \\ \hline
+				"Err Mon" BNC & 0dB$\pm$0.5dB Flat & 0.33 dB & 0.0 dB\\ \hline
 				“To/From PCal Interface” & 0dB$\pm$0.5dB Flat & &\\
-				Pins 6(+) and 14(-) & read differentially(A-B)  & &\\ \hline
+				Pins 6(+) and 14(-) & read differentially(A-B)  & 0.05 dB & 0.0 dB\\ \hline
 				“To/From PCal Interface” & 0dB$\pm$0.5dB Flat & & \\
-				Pins 7(+) and 15(-) & read differentially(A-B)  & &\\ \hline
-				\multirow{4}{*}{“Out Mon” BNC} & -8.11dB at DC with 2 poles @ & & \\
+				Pins 7(+) and 15(-) & read differentially(A-B)  & -1.7 dB & -0.6 dB\\ \hline
+				\multirow{4}{*}{“Out Mon” BNC} & -8.11dB at DC with 2 poles @ & OK & OK \\
 				& 3KHz, and 1 zero @30KHz & &\\ \hline
-				\multirow{2}{*}{“Out Mon” BNC} & -88.14 deg$\pm$2deg  of phase at 3KHz& &\\ \hline
-				\multirow{3}{*}{“Out Mon” BNC} & Rising to -125.93deg$\pm$2deg & &\\ 
+				\multirow{2}{*}{“Out Mon” BNC} & -88.14 deg$\pm$2deg  of phase at 3KHz& -86.4 deg &-90.72 deg\\ \hline
+				\multirow{3}{*}{“Out Mon” BNC} & Rising to -125.93deg$\pm$2deg & -129.6 deg & -126 deg\\ 
 				&of phase @ 30KHz& &\\ \hline
-				\multirow{4}{*}{“To AOM” BNC} & -8.11dB at DC with 2 poles @ & & \\
+				\multirow{4}{*}{“To AOM” BNC} & -8.11dB at DC with 2 poles @ & OK & OK\\
 				& 3KHz, and 1 zero @30KHz & &\\ \hline
-				\multirow{2}{*}{“To AOM” BNC} & -88.142deg$\pm$2deg of phase at 3KHz & &\\ \hline
-				\multirow{3}{*}{“To AOM” BNC} & Rising to -125.93deg$\pm$2deg & &\\ 
+				\multirow{2}{*}{“To AOM” BNC} & -88.142deg$\pm$2deg of phase at 3KHz & -90.72 deg& -90.72 deg\\ \hline
+				\multirow{3}{*}{“To AOM” BNC} & Rising to -125.93deg$\pm$2deg & -138.24 deg &-126 deg\\ 
 				&of phase @ 30KHz& &\\ \hline
 			\end{tabularx}
 		\end{center}
@@ -91,17 +91,17 @@ For the electronic measurements, we test the performance of Optical Follower Ser
 				\hline
 				\multirow{2}{*}{\textbf{Input}} & \multirow{2}{*}{\textbf{Output}} & \multirow{2}{*}{\textbf{Expected}} & \multicolumn{2}{ c|}{\textbf{Observed}}\\ \cline{4-5}
 				& & & OFS1 & OFS2 \\ \hline
-				“From DAC”  & \multirow{5}{*}{“To AOM” BNC} & -8.11dB at DC with 2 & & \\
+				“From DAC”  & \multirow{5}{*}{“To AOM” BNC} & -8.11dB at DC with 2 & OK & OK \\
 				connector Pins & & poles @ 3KHz, and 1 & &\\
 				1(+) and 6(GND) & & zero @30KHz & &\\ \hline
-				\multirow{5}{*}{“CLTF Test In” BNC}  & \multirow{5}{*}{“To AOM” BNC} & -8.11dB at DC with 2 & &\\
+				\multirow{5}{*}{“CLTF Test In” BNC}  & \multirow{5}{*}{“To AOM” BNC} & -8.11dB at DC with 2 & OK&OK\\
 				& & poles @ 3KHz, and 1 & &\\
 				& & zero @30KHz & &\\ 
 				\hline
 			\end{tabularx}
 		\end{center}
-		\item \textbf{Gain tests:} \\
-		With the sine wave generator, input an appropriate amplitude 500Hz sine wave into the “From PCal PD” connector, Pins 1(+) and 6(-) Watch the output signal on the “To AOM” BNC connector on an oscilloscope. Vary the gain voltage level from the voltage calibrator from negative (-)9.6V to positive(+)9.6V (From PCal Interface connector, Pin 1(-4.8V) and Pin 9 (GND)). The visible gain should vary from 0.143V/V to 124 V/V (-14dB to 46dB), Record the results in the table below, either by measuring the p-p signal with cursors, or getting the RMS amplitude from the scope’s “measure” function:
+		\item \textbf{Gain tests\footnote{After this measurement, we observed gain saturation around 12 dB. Not solved. }:} \\
+		With the sine wave generator, input an appropriate amplitude 500Hz sine wave into the “From PCal PD” connector, Pins 1(+) and 6(-) Watch the output signal on the “To AOM” BNC connector on an oscilloscope. Vary the gain voltage level from the voltage calibrator from negative (-)6.24V to positive(+)6.24V (From PCal Interface connector, Pin 1(-4.8V) and Pin 9 (GND)). The visible gain should vary from 0.143V/V to 124 V/V (-14dB to 46dB), Record the results in the table below, either by measuring the p-p signal with cursors, or getting the RMS amplitude from the scope’s “measure” function:
 		\begin{center}
 			\begin{tabularx}{\textwidth}{|c *{4}{|Y}|}
 				\hline
@@ -109,43 +109,44 @@ For the electronic measurements, we test the performance of Optical Follower Ser
 				\textbf{“From PCal PD” }& \textbf{“To/From PCal Interface”} & & \multicolumn{2}{ c|}{ }\\
 				\textbf{1(+) and 6(-)} & \textbf{Pin1 and} & & \multicolumn{2}{ c|}{ }\\ \cline{4-5}
 				& \textbf{Pin 9(GND)} & & OFS1 & OFS2 \\ \hline 
-				\multirow{4}{*}{1$\mbox{V}_{\mbox{p-p}}$}  & \multirow{4}{*}{-9.6V} & 143 $\mbox{mV}_{\mbox{p-p}}$ $\pm$ 10mV& &\\
-				& &  or 55 $\mbox{mV}_{\mbox{rms}}$ $\pm$ 10mV & &\\ \hline
-				\multirow{4}{*}{1$\mbox{V}_{\mbox{p-p}}$}  & \multirow{4}{*}{0V} & 4.12 $\mbox{V}_{\mbox{p-p}}$ $\pm$ 100mV& &\\
+				\multirow{4}{*}{1$\mbox{V}_{\mbox{p-p}}$}  & \multirow{4}{*}{-6.24 V} & 143 $\mbox{mV}_{\mbox{p-p}}$ $\pm$ 10mV& &\\
+				& &  or 55 $\mbox{mV}_{\mbox{rms}}$ $\pm$ 10mV & 144 $mV_{p-p}$& 126.4 $mV_{p-p}$\\ \hline
+				\multirow{4}{*}{1$\mbox{V}_{\mbox{p-p}}$}  & \multirow{4}{*}{0V} & 4.12 $\mbox{V}_{\mbox{p-p}}$ $\pm$ 100mV& 4.28 $mV_{p-p}$& 4.20 $mV{p-p}$\\
 				& &  or 1.48 $\mbox{mV}_{\mbox{rms}}$ $\pm$ 10mV & &\\ \hline
-				\multirow{4}{*}{0.03$\mbox{V}_{\mbox{p-p}}$}  & \multirow{4}{*}{+9.6V} & 3.72 $\mbox{mV}_{\mbox{p-p}}$ $\pm$ 10mV& &\\
+				\multirow{4}{*}{0.03$\mbox{V}_{\mbox{p-p}}$}  & \multirow{4}{*}{+6.24 V} & 3.56 $\mbox{V}_{\mbox{p-p}}$ $\pm$ 10mV& 3.60 $V_{p-p}$& 3.92 $V_{p-p}$\\
 				& &  or 1.43 $\mbox{mV}_{\mbox{rms}}$ $\pm$ 10mV & &\\ 
 				\hline
 			\end{tabularx}
 		\end{center}
 		
 		\item \textbf{Offset Input Test:}\\
-		With the gain level set to negative (-)1V, Input a 0.1Vp-p, 500Hz Sine wave into the “From PCal PD” connector, Pins 1(+) and 6(-). Next, put a voltage level into the Offset channel, “To/From PCal Interface, Pins 2(+) and 10(-). There should be a gain of ~4.4V/V offset on the observed sine wave on the oscilloscope. Verify this in the table below:
+		With the gain level set to -1 V, Input a 0.1Vp-p, 500Hz Sine wave into the “From PCal PD” connector, Pins 1(+) and 6(-). Next, put a voltage level into the Offset channel, “To/From PCal Interface, Pins 2(+) and 10(-). There should be a gain of ~4.4V/V offset on the observed sine wave on the oscilloscope. Verify this in the table below:
 		\begin{center}
 			\begin{tabularx}{\textwidth}{|c *{4}{|Y}|}
 				\hline
 				\multirow{2}{*}{\textbf{Offset Input}} & \multirow{2}{*}{\textbf{Offset Expected}} & \multicolumn{2}{ c|}{\textbf{Offset Observed}}\\ \cline{3-4}
 				& & OFS1 & OFS2 \\ \hline
-				0V & 0V$\pm$ 0.2V & &\\ \hline
-				1V &  1.5V$\pm$ 0.2V & &  \\ \hline
-				2V & 3V$\pm$ 0.2V & & \\
+				0V & 0V$\pm$ 0.2V & 19.1 mV& -41.7 mV\\ \hline
+				1V &  1.5V$\pm$ 0.2V & 1.29 V& 2.05 V \\ \hline
+				2V & 3V$\pm$ 0.2V & 2.54 V & 3.51 V\\
 				\hline
 			\end{tabularx}
 		\end{center}
-		\item \textbf{Oscillation Monitor tests:}\\ Put a negative (-) 4.8V level on the servo gain channel (From PCal Interface connector, Pin 1(-4.8V) and Pin 9 (GND)). Place a 1Vp-p, sine wave into the “From PCal PD” connector, Pins 1(+) and 6(-). Read the voltage at the “To/From PCal Interface” connector, Pins 3(+) and 11(-) with a DMM. Vary the frequency, and record the results in the table below:
+		\item \textbf{Oscillation Monitor tests\footnote{This functionality seems to have mistake in circuit design.}:}\\  Put a negative (-) 4.8V level on the servo gain channel (From PCal Interface connector, Pin 1(-3.12V) and Pin 9 (GND)). Place a 1Vp-p, sine wave into the “From PCal PD” connector, Pins 1(+) and 6(-). Read the voltage at the “To/From PCal Interface” connector, Pins 3(+) and 11(-) with a DMM. Vary the frequency, and record the results in the table below:
 		\begin{center}
 			\begin{tabularx}{\textwidth}{|c *{4}{|Y}|}
 				\hline
 				\multirow{2}{*}{\textbf{Input Frequency}} & \multirow{2}{*}{\textbf{Output Expected}} & \multicolumn{2}{ c|}{\textbf{Output Observed}}\\ \cline{3-4}
 				& & OFS1 & OFS2 \\ \hline
-				100Hz & -0.79V$\pm$0.02V & &\\ \hline
-				1KHz & -0.79V$\pm$0.02V &  &\\ \hline
-				100KHz & -0.72V$\pm$0.02V &  &\\
+				100Hz & -0.79V$\pm$0.02V & -90.1 mV&\\ \hline
+				1KHz & -0.79V$\pm$0.02V & -90.9 mV &\\ \hline
+				100KHz & -0.72V$\pm$0.02V &  -89.8 mV &\\
 				\hline
 			\end{tabularx}
 		\end{center}
 	\end{enumerate}
 \end{enumerate}
+
 \subsection{Interface board test}
 \begin{enumerate}
 	\item \textbf{Overview}\\
@@ -169,8 +170,8 @@ For the electronic measurements, we test the performance of Optical Follower Ser
 				\multirow{3}{*}{\textbf{Voltage}} & \multirow{3}{*}{\textbf{Current}}  & \multicolumn{2}{ c|}{\multirow{2}{*}{\textbf{Observed Current}}}  & \multicolumn{2}{ c|}{\textbf{Front and Back Panel,}}\\
 				& & \multicolumn{2}{ c|}{ } & \multicolumn{2}{ c|}{\textbf{$\pm$15V LEDs On}}\\ \cline{3-6}
 				& & Interface1 & Interface2 & Interface1 & Interface2 \\ \hline
-				+18V & 130mA$\pm$ 15mA &   & & & \\ \hline
-				-18V & 130mA$\pm$ 15mA &   & & &\\
+				+18V & 130mA$\pm$ 15mA &  236 mA & 234 mA & on & on \\ \hline
+				-18V & 130mA$\pm$ 15mA &  229 mA & 234 mA & on & on\\
 				\hline
 			\end{tabularx}
 		\end{center}
@@ -184,14 +185,14 @@ For the electronic measurements, we test the performance of Optical Follower Ser
 					\hline
 					\multirow{2}{*}{\textbf{EtherCAT Pin}} & \multirow{2}{*}{\textbf{Optical Follower Pin}} & \multicolumn{2}{ c|}{\textbf{Continuous (Yes/No)?}}\\ \cline{3-4}
 					& & Interface1 & Interface2 \\ \hline
-					J2-Pin 1 & J4-Pin 1 & & \\ \hline
-					J2-Pin 20 & J4-Pin 9  & & \\ \hline
-					J2-Pin 2 & J4-Pin 2  &  &\\ \hline
-					J2-Pin 21 & J4-Pin 10  & & \\ \hline
-					J2-Pin 7 & J4-Pin 3  & & \\ \hline
-					J2-Pin 26 & J4-Pin 11  & & \\ \hline
-					J2-Pin 10 & J4-Pin 4  & & \\ \hline
-					J2-Pin 29 & J4-Pin 12  & & \\ 
+					J2-Pin 1 & J4-Pin 1 & OK & OK \\ \hline
+					J2-Pin 20 & J4-Pin 9  & OK & OK \\ \hline
+					J2-Pin 2 & J4-Pin 2  &  OK & OK \\ \hline
+					J2-Pin 21 & J4-Pin 10  & OK & OK \\ \hline
+					J2-Pin 7 & J4-Pin 3  & OK & OK \\ \hline
+					J2-Pin 26 & J4-Pin 11  & OK & OK \\ \hline
+					J2-Pin 10 & J4-Pin 4  & OK & OK \\ \hline
+					J2-Pin 29 & J4-Pin 12  & OK & OK \\ 
 					\hline
 				\end{tabularx}
 			\end{center}
@@ -200,10 +201,10 @@ For the electronic measurements, we test the performance of Optical Follower Ser
 					\hline
 					\multirow{2}{*}{\textbf{Anti-Alias Pin}} & \multirow{2}{*}{\textbf{Optical Follower Pin}} & \multicolumn{2}{ c|}{\textbf{Continuous (Yes/No)?}}\\ \cline{3-4}
 					& & Interface1 & Interface2 \\ \hline
-					J1-Pin 1 & J4-Pin 6 & & \\ \hline
-					J1-Pin 6 & J4-Pin 14  & & \\ \hline
-					J1-Pin 4 & J4-Pin 7  & & \\ \hline
-					J1-Pin 9 &J4-Pin 15 & & \\
+					J1-Pin 1 & J4-Pin 6 & OK & OK \\ \hline
+					J1-Pin 6 & J4-Pin 14  & OK & OK \\ \hline
+					J1-Pin 4 & J4-Pin 7  & OK & OK \\ \hline
+					J1-Pin 9 &J4-Pin 15 & OK & OK \\
 					\hline
 				\end{tabularx}
 			\end{center}
@@ -214,18 +215,18 @@ For the electronic measurements, we test the performance of Optical Follower Ser
 					\hline
 					\multirow{2}{*}{\textbf{EtherCAT Pin}} & \textbf{Laser Power and } & \multicolumn{2}{ c|}{\textbf{Continuous (Yes/No)?}}\\ \cline{3-4}
 					& \textbf{AOM Pin} & Interface1 & Interface2 \\ \hline
-					J2-Pin 3 & J5-Pin 1  & & \\ \hline
-					J2-Pin 22 & J5-Pin 9  & &  \\ \hline
-					J2-Pin 31 & J5-Pin 2  & & \\ \hline
-					J2-Pin 29 & J5-Pin 10  & & \\ \hline
-					J2-Pin 29 & J5-Pin 11  & & \\ \hline
-					J2-Pin 29 & J5-Pin 12  & & \\ 
+					J2-Pin 3 & J5-Pin 1  & OK & OK \\ \hline
+					J2-Pin 22 & J5-Pin 9  & OK & OK \\ \hline
+					J2-Pin 31 & J5-Pin 2  & OK & OK \\ \hline
+					J2-Pin 29 & J5-Pin 10  & OK & OK \\ \hline
+					J2-Pin 29 & J5-Pin 11  & OK & OK \\ \hline
+					J2-Pin 29 & J5-Pin 12  & OK & OK \\ 
 					\hline
 				\end{tabularx}
 			\end{center}
 			\item \textbf{Access Control Continuity:}\\
 			Using two 9-pin DSub Breakout boards, or other effective method, short together Pins 2$\&$7 of both the Rx and Tx Temp and Interlock connectors on the front panel. Once this is done, Pins 1$\&$6 on the back panel “To Access Control” connector should be shorted together. Disconnecting either front panel connector should break the short.\\
-			Operation as stated above? (Yes/No)\underline{\qquad\qquad}
+			Operation as stated above? (Yes/No)\underline{\qquad Yes \qquad}
 			\item \textbf{WSPD Continuity:}\\
 			With the WSPDA and WSPDB Jumpers still in the “WSPD” position, Check continuity from the front panel WS PD connector to the EtherCAT connector:
 			\begin{center}
@@ -233,35 +234,35 @@ For the electronic measurements, we test the performance of Optical Follower Ser
 					\hline
 					\multirow{2}{*}{\textbf{EtherCAT Pin}} & \multirow{2}{*}{\textbf{WS PD Pin}} & \multicolumn{2}{ c|}{\textbf{Continuous (Yes/No)?}}\\ \cline{3-4}
 					& & Interface1 & Interface2 \\ \hline
-					J2-Pin 4 & J7-Pin 1  & & \\ \hline
-					J2-Pin 23 & J7-Pin 6  & & \\ 
+					J2-Pin 4 & J7-Pin 1  & OK & OK \\ \hline
+					J2-Pin 23 & J7-Pin 6  & OK & OK \\ 
 					\hline
 				\end{tabularx}
 			\end{center}
 		\end{enumerate}
 		\item \textbf{Relay Functions:}\\
 		Verify that Pins 11 and 12 on the EtherCAT connector read +15V with respect to Pin 29 (GND).\\
-		Pin 11 +15V?\underline{\qquad\qquad}\\
-		Pin 12 +15V?\underline{\qquad\qquad}\\
+		Pin 11 +15V?\underline{\qquad Yes \qquad}\\
+		Pin 12 +15V?\underline{\qquad Yes \qquad}\\
 		Using a clip lead, tie EtherCAT Pin 11 (+15V) to Pin 13 (Beckhoff remote GND). Next clip a long clip lead to pin 12 (+15V), and use this to actuate the relays in the table below. In cells that call out Local/Remote switch position, verify that the switch is in that position. Look for the appropriate signal (and LED lighting, where appropriate), and record the results in the table below:
 		\begin{center}
 			\begin{tabularx}{\textwidth}{|c *{5}{|Y}|}
 				\hline
 				\multirow{2}{*}{\textbf{Pin to connect with Pin 12}} & \textbf{Switch} & \textbf{Readout} & \textbf{Expected} & \multicolumn{2}{ c|}{\textbf{Signal present (Yes/No)?}}\\ \cline{5-6}
 				& \textbf{positions} & \textbf{pin} & \textbf{signal} & Interface1 & Interface2 \\ \hline
-				\multirow{3}{*}{“To Shutter” Pin 6} & \multirow{3}{*}{Remote} & “EtherCAT”  & +15V$\pm$0.5V,  & & \\
-				& & Pin 32 & “Open” LED lit && \\ \hline 
-				\multirow{3}{*}{“To Shutter” Pin 5} & \multirow{3}{*}{Remote} & “EtherCAT”  & +15V$\pm$0.5V, & &\\ 
+				\multirow{3}{*}{“To Shutter” Pin 6} & \multirow{3}{*}{Remote} & “EtherCAT”  & +15V$\pm$0.5V,  & 14.82 V, "Closed" LED lit \footnote{The label "close" and "open" of the chassis is inverted. It also applies to Interface 2. } & 14.12 V, "Closed" lit\\
+				& & Pin 32 & “Open” LED lit & & \\ \hline 
+				\multirow{3}{*}{“To Shutter” Pin 5} & \multirow{3}{*}{Remote} & “EtherCAT”  & +15V$\pm$0.5V, & 14.82 V, "Open" LED lit& 14.14 V, "Open" lit\\ 
 				& & Pin 14 & “Closed” LED lit & &\\ \hline 
-				\multirow{2}{*}{“Optical Follower” Pin 5} & \multirow{2}{*}{Remote} & “EtherCAT” Pin 33 & \multirow{2}{*}{+15V$\pm$0.5V} & &\\ \hline 
-				\multirow{3}{*}{“EtherCAT” Pin 30} & \multirow{3}{*}{Remote} & “To Shutter” Pin 1 & \multirow{3}{*}{+15V$\pm$0.5V} & &\\ \hline 
-				\multirow{3}{*}{“EtherCAT” Pin 30} & \multirow{3}{*}{Remote} & “To Shutter” Pin 3 & \multirow{3}{*}{+15V$\pm$0.5V} & &\\ \hline 
-				\multirow{3}{*}{“EtherCAT” Pin 30} & \multirow{3}{*}{Local} & “To Shutter” Pin 1 & \multirow{3}{*}{+15V$\pm$0.5V} & &\\ \hline 
-				\multirow{3}{*}{“EtherCAT” Pin 30} & \multirow{3}{*}{Local} & “To Shutter” Pin 3 & \multirow{3}{*}{0V} & &\\ \hline 
-				\multirow{4}{*}{“EtherCAT” Pin 30} & Local, pushing  &“To Shutter” & \multirow{4}{*}{+15V$\pm$0.5V} & &\\
-				& “Open” button & Pin 3 & & &\\ \hline
-				\multirow{4}{*}{“EtherCAT” Pin 30} & Local, pushing  & “To Shutter” & \multirow{4}{*}{0V} & &\\ 
-				& “Close” button & Pin 1 & & &\\
+				\multirow{2}{*}{“Optical Follower” Pin 5} & \multirow{2}{*}{Remote} & “EtherCAT” Pin 33 & \multirow{2}{*}{+15V$\pm$0.5V} & 14.82 V&14.14 V\\ \hline 
+				\multirow{3}{*}{“EtherCAT” Pin 30} & \multirow{3}{*}{Remote} & “To Shutter” Pin 1 & \multirow{3}{*}{+15V$\pm$0.5V} & 14.82 V& 14.14 V\\ \hline 
+				\multirow{3}{*}{“EtherCAT” Pin 30} & \multirow{3}{*}{Remote} & “To Shutter” Pin 3 & \multirow{3}{*}{+15V$\pm$0.5V} & 14.82 V& 14.14 V\\ \hline 
+				\multirow{3}{*}{“EtherCAT” Pin 30} & \multirow{3}{*}{Local} & “To Shutter” Pin 1 & \multirow{3}{*}{+15V$\pm$0.5V} & 14.82 V&14.14 V\\ \hline 
+				\multirow{3}{*}{“EtherCAT” Pin 30} & \multirow{3}{*}{Local} & “To Shutter” Pin 3 & \multirow{3}{*}{0V} & 0 V & 0 V\\ \hline 
+				\multirow{4}{*}{“EtherCAT” Pin 30} & Local, pushing  &“To Shutter” &  \multirow{4}{*}{0V} & 0 V & 0 V\\
+				& “Close” button & Pin 1 & & &\\ \hline
+				\multirow{4}{*}{“EtherCAT” Pin 30} & Local, pushing  & “To Shutter” & \multirow{4}{*}{+15V$\pm$0.5V}& 14.82 V &14.14 V\\ 
+				& “Open” button & Pin 3 & & &\\
 				\hline
 			\end{tabularx}
 		\end{center}
@@ -275,24 +276,24 @@ For the electronic measurements, we test the performance of Optical Follower Ser
 					\hline
 					\multirow{3}{*}{\textbf{Input}} & \textbf{Output Pins } & \multicolumn{2}{ c|}{\textbf{Observed Output}}\\ \cline{3-4}
 					& \textbf{(Expected 0dB $\pm$ 0.5dB)} & \multirow{2}{*}{Interface1} & \multirow{2}{*}{Interface2} \\ \hline
-					“Rx PD” Pins 1(+) and 6(-) & “To Anti-Alias” Pins 2(+) and 7(-)  & & \\ \hline
-					“Rx PD” Pins 1(+) and 6(-) & Rx PD Mon BNC & &\\ \hline
-					“Tx PD” Pins 1(+) and 6(-) & “To Anti-Alias” Pins 3(+) and 8(-) & &\\ \hline
-					“Tx PD” Pins 1(+) and 6(-) & Tx PD Mon BNC & &\\ \hline
-					“WS PD” Pins 1(+) and 6(-) & “EtherCAT” Pins 4(+) and 23(-) & &\\ \hline
-					“WS PD” Pins 1(+) and 6(-) & WS PD Mon BNC & &\\
+					“Rx PD” Pins 1(+) and 6(-) & “To Anti-Alias” Pins 2(+) and 7(-)  & -0.1 dB& 0.0 dB \\ \hline
+					“Rx PD” Pins 1(+) and 6(-) & Rx PD Mon BNC & -0.1 dB & -0.1 dB\\ \hline
+					“Tx PD” Pins 1(+) and 6(-) & “To Anti-Alias” Pins 3(+) and 8(-) & -0.1 dB & 0.0 dB\\ \hline
+					“Tx PD” Pins 1(+) and 6(-) & Tx PD Mon BNC & 0.0 dB & 0.0 dB\\ \hline
+					“WS PD” Pins 1(+) and 6(-) & “EtherCAT” Pins 4(+) and 23(-) & 0.0 dB & 0.0 dB\\ \hline
+					“WS PD” Pins 1(+) and 6(-) & WS PD Mon BNC & 0.0 dB & 0.0 dB\\
 					\hline
 				\end{tabularx}
 			\end{center}
-			\item \textbf{Alternate WSPD Input Test:}\\
+			\item \textbf{Alternate WSPD Input Test\footnote{It is not used for operation.}:}\\
 			Now move the jumpers WSPDA and WSPDB from the “WSPD” position, to the Alt. WSPD position. Apply the above signal to the front panel “Alt. WSPD” BNC, and read out the signal in the appropriate places in the table below:
 			\begin{center}
 				\begin{tabularx}{\textwidth}{|c *{3}{|Y}|}
 						\hline
 						\multirow{3}{*}{\textbf{Input}} & \textbf{Output Pins} & \multicolumn{2}{ c|}{\textbf{Observed Output}}\\ \cline{3-4}
 						& \textbf{(Expected 6dB +/- 0.5dB)} & \multirow{2}{*}{Interface1} & \multirow{2}{*}{Interface2} \\ \hline
-						“Alt. WSPD” BNC & “EtherCAT” Pins 4(+) and 23(-)“& & \\ \hline
-						“Alt. WSPD” BNC & WS PD Mon BNC & & \\
+						“Alt. WSPD” BNC & “EtherCAT” Pins 4(+) and 23(-)“& 6.0 dB & 6.1 dB \\ \hline
+						“Alt. WSPD” BNC & WS PD Mon BNC & 6.1 dB & 6.2 dB\\
 						\hline
 					\end{tabularx}
 			\end{center}
@@ -303,17 +304,17 @@ For the electronic measurements, we test the performance of Optical Follower Ser
 						\hline
 						\multirow{2}{*}{\textbf{Pin}} & \multirow{2}{*}{\textbf{Expected Voltage}} & \multicolumn{2}{ c|}{\textbf{Observed Voltage}}\\ \cline{3-4}
 						& & Interface1 & Interface2 \\ \hline
-						“Rx PD” Pins 2(+) and 7(GND) & +15V +/- 0.5V & &\\ \hline
-						“Rx PD” Pins 3(-) and 7(GND) & -15V +/- 0.5V & &\\ \hline
-						“Tx PD” Pins 2(+) and 7(GND) & +15V +/- 0.5V & &\\ \hline
-						“Tx PD” Pins 3(-) and 7(GND) & -15V +/- 0.5V & &\\ \hline
-						“WS PD” Pins 2(+) and 7(GND) & +15V +/- 0.5V & & \\ \hline
-						“WS PD” Pins 3(-) and 7(GND) & -15V +/- 0.5V & &\\ 
+						“Rx PD” Pins 2(+) and 7(GND) & +15V +/- 0.5V & 14.83&14.82\\ \hline
+						“Rx PD” Pins 3(-) and 7(GND) & -15V +/- 0.5V & -14.97&-14.99\\ \hline
+						“Tx PD” Pins 2(+) and 7(GND) & +15V +/- 0.5V & 14.83&14.82\\ \hline
+						“Tx PD” Pins 3(-) and 7(GND) & -15V +/- 0.5V & -14.97& -14.99\\ \hline
+						“WS PD” Pins 2(+) and 7(GND) & +15V +/- 0.5V & 14.83& 14.82\\ \hline
+						“WS PD” Pins 3(-) and 7(GND) & -15V +/- 0.5V & -14.97& -14.99\\ 
 						\hline
 					\end{tabularx}
 			\end{center}
 		\end{enumerate}
-		\item \textbf{Laser Diode Current and Temperature Tests:}
+		\item \textbf{Laser Diode Current and Temperature Tests\footnote{Not used in KAGRA.}:}
 		Using a network analyzer, apply a 1Vp-p, signal and sweep from 100Hz to 100KHz to the appropriate pins in the table below. Read out the signal differentially (A-B) for the Anti-Alias pins, and verify that the signal is correct across the entire frequency range:
 		\begin{center}
 			\begin{tabularx}{\textwidth}{|c *{3}{|Y}|}
@@ -326,20 +327,22 @@ For the electronic measurements, we test the performance of Optical Follower Ser
 			\end{tabularx}
 		\end{center}
 		\item \textbf{Temperature Sensor tests:}\\
-		Set up the Voltage Calibrator to output current, and connect the ground lead to Pin 2 of the “To Shutter” connector (Board GND). Apply 1mA onto the appropriate pins, and read out the signal using a DMM as per the table below:
+		Set up the Voltage Calibrator to output current \footnote{Because current output is not available, I applied 0-10 V instead. }, and connect the ground lead to Pin 2 of the “To Shutter” connector (Board GND). Apply 1mA onto the appropriate pins, and read out the signal using a DMM as per the table below:
 		\begin{center}
 			\begin{tabularx}{\textwidth}{|c *{4}{|Y}|}
 				\hline
 				\multirow{2}{*}{\textbf{Input Pins}} & \multirow{2}{*}{\textbf{Output Pins}} & \textbf{Expected } & \multicolumn{2}{ c|}{\textbf{Observed Output}}\\ \cline{4-5}
 				& & \textbf{Output} & Interface1 & Interface2 \\ \hline
-				“Tx Temp. and Interlock” Pin 6 & “EtherCAT” Pins 5(+) and 24(-) & 20V +/- 0.1V & &\\ \hline
-				“Rx Temp. and Interlock” Pin 6 & “EtherCAT” Pins 6(+) and 25(-) & 20V +/- 0.1V & &\\
+				“Tx Temp. and Interlock” Pin 6 & “EtherCAT” Pins 5(+) and 24(-) & 20V +/- 0.1V \footnote{10 V for 10 V input. } & 10.1 V for 10 V input.& not for use. \\ \hline
+				“Rx Temp. and Interlock” Pin 6 & “EtherCAT” Pins 6(+) and 25(-) & 20V +/- 0.1V \footnote{10 V for 10 V input. } & 10.1 V for 10 V input. & not for use. \\
 				\hline
 			\end{tabularx}
 		\end{center}
 		Move the jumpers WSPDA and WSPDB back to the “WSPD” position.
 	\end{enumerate}
 \end{enumerate}
+
+\begin{comment}
 \subsection{Beam Position Monitoring Board Test}
 \begin{enumerate}
 	\item \textbf{Overview}\\
@@ -402,12 +405,21 @@ For the electronic measurements, we test the performance of Optical Follower Ser
 	\end{enumerate}
 \end{enumerate}
 
+\end{comment}
+
 \subsection{Digital System Test}
     \subsubsection{Anti-Imaging Chassis}
-    Measuring the Transfer function of AI filter
+    Measuring the Transfer function of AA/AI filter by connecting DAC output to ADC input using Dsub connectors for PCal input and output (50 m). \footnote{The digital filter is updated after this measurement. }
 
+\begin{figure}
+	\begin{center}
+		\includegraphics[bb=20 255 587 611, width=15cm]{20181017AAAIOL.pdf}
+		\caption{Measured TF of the AA/AI filter.} 
+		\label{fig:AAAI} 
+	\end{center}
+\end{figure}
 
-\subsection{Beam position monitoring board test}
+%\subsection{Beam position monitoring board test}
 
 \section{Optical test}
 \subsection{HWP angle}
@@ -455,17 +467,30 @@ S^{'}=R(\theta)MR^{-1}(\theta)S=
 
 Therefore, the Strokes vector remains the same when half wave plate rotates every 90 degrees.
 Rotate the half wave plate, measure the power, and see if the data matches the $\sin(4\theta)$ function.
+
 \subsection{Transmittance of AOM}
-The diffraction efficiency (DE) of AOM is defined as the ratio of zeroth and first order output beams of AOM:
+The diffraction efficiency (DE) of the AOM is defined as the ratio of zeroth and first order output beams of AOM:
 \begin{equation}
 DE=\frac{\mathrm{First order(RF on)}}{\mathrm{Zeroth orfer(RF out)}}.
 \end{equation}
-Transmittance of the AOM depend on the input voltage of the AOM. We can change the Gain and offset of the AOM through the digital system. To work the feed back effectively, we need to find the optimized operating point. We measure the transmittance of AOM by changing input voltage. The function can be described as the following equation:
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[bb=0 0 813 493,width=15cm]{DiffractionE.png}
+		\caption{Diffraction efficiency and related values.} 
+		\label{fig:DE} 
+	\end{center}
+\end{figure}
+
+ The DE and related values are summarized in Fig.\ref{fig:DE}.
+
+The transmittance of the AOM depend on the input voltage of the AOM. We can change the Gain and offset of the AOM through the digital system. To work the feedback effectively, we need to find the optimized operating point. We measure the transmittance of AOM by changing input voltage. The function can be described as the following equation:
 \begin{equation}
 T=A_1 \sin{\left( \pi \frac{V}{A_2}\right)},
 \end{equation}
-where V is the input voltage,$ A_1$ and $A_2$ are measured values. We estimate the $A_1$ and $A_2$ by fitting.
+where V is the input voltage,$ A_1$ and $A_2$ are measured values. We estimate the $A_1$ and $A_2$ by fitting of the measurement, shown in Fig.\ref{fig:AOM1} and \ref{fig:AOM2}. $A_2$ is 605 mV for path1 and 718 mV for path2. Therefore, the working point is 304.5 mV for path1 and 359 mV for path2.
 
+\begin{comment}
 \begin{center}
 	\resizebox{5cm}{!}{
 	\begin{tabular}{| c | c | c | }
@@ -475,23 +500,51 @@ where V is the input voltage,$ A_1$ and $A_2$ are measured values. We estimate t
 			Path2&& \\ \hline
 	\end{tabular}}
 \end{center}
-
-\subsection{Mode matching and beam quality}
-First mount the laser isolator, half-wave plate and polarizer on the optical table, and use the \underline{\qquad\qquad} beam profiler to measure the beam width of our laser. Use power meter to measure the laser power, and rotate the half-wave plate in order to reduce the laser power to below the beam profiler requirement. Use the Iris Diaphragm to check whether the laser beam is parallel to the optical table or not, and mount the beam profiler and start the beam width measurement. Measure the beam width at different points. For each point, measure the beam width for one minute, and calculate the mean value and standard deviation. Finally fit the data, and calculate the beam waist and beam quality. The measured beam profile will be shown like Figure~\ref{fig:beam_profile}:
+\end{comment}
 
 \begin{figure}
 	\begin{center}
-		\includegraphics[width=15cm]{path1_no_lens.eps}
+		\includegraphics[bb=20 255 587 641,width=15cm]{20180719AOM_Tx1ratio.pdf}
+		\caption{AOM diffraction efficiency of path1. Vertical axis is arbitrary. } 
+		\label{fig:AOM1} 
+	\end{center}
+\end{figure}
+\begin{comment}
+   1  p0           2.53468e-04   6.62440e-08   1.20863e-10  -6.87613e+03
+   2  p1           1.04700e-06     fixed    
+   3  p2           7.11998e+02   1.53489e+00   2.42810e-03  -1.82347e-04
+   4  p3           1.18249e+00   2.36171e-02   3.81658e-05  -3.68179e-02
+\end{comment}
+\begin{figure}
+	\begin{center}
+		\includegraphics[bb=20 255 587 641,width=15cm]{20180719AOM_Tx2ratio.pdf}
+		\caption{AOM diffraction efficiency of path2. Vertical axis is arbitrary. } 
+		\label{fig:AOM2} 
+	\end{center}
+\end{figure}
+\begin{comment}
+   1  p0           2.53559e-04   2.24962e-07   1.16629e-09  -7.30401e+00
+   2  p1           1.04700e-06     fixed    
+   3  p2           7.08023e+02   1.11064e+00   5.53815e-03   1.60749e-04
+   4  p3           1.05467e+00   4.45390e-03   2.29483e-05  -3.85561e-01
+\end{comment}
+
+\subsection{Mode matching and beam quality}
+First mount the laser isolator, half-wave plate and polarizer on the optical table, and use the Thorlabs beam profiler to measure the beam width of our laser. Use power meter to measure the laser power, and rotate the half-wave plate in order to reduce the laser power to below the beam profiler requirement. Use the Iris Diaphragm to check whether the laser beam is parallel to the optical table or not, and mount the beam profiler and start the beam width measurement. Measure the beam width at different points. For each point, measure the beam width for one minute, and calculate the mean value and standard deviation. Finally fit the data, and calculate the beam waist and beam quality. The measured beam profile will be shown like Figure~\ref{fig:beam_profile}:
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[bb=0 0 862 627,width=15cm]{w_z_Xend.png}
 		\caption{Beam profile of laser.} 
 		\label{fig:beam_profile} 
 	\end{center}
 \end{figure}
 
-After measuring beam profile, mount the beam splitter, and use power meter to measure the ratio of two paths from the beam splitter. Adjust the angle of incidence of the beam splitter to make the power difference to be less than 1$\%$. The typical value is \underline{\qquad\qquad}. After finishing adjusting beam splitter, install the positive lens for AOM and adjust the height of positive lens to make the laser beam maintain parallel to the optical table. Figure~\ref{fig:modematching_AOM} is the mode matching result. According to the result, the distance between positive lens and the focus of laser should be 361mm, and the AOM should be mounted at 710mm position. Figure~\ref{fig:beamprofile_AOM1} and Figure~\ref{fig:beamprofile_AOM2} are the data and the fitting results.
+After measuring beam profile, mount the beam splitter, and use power meter to measure the ratio of two paths from the beam splitter. Adjust the angle of incidence of the beam splitter to make the power difference to be less than 1$\%$. The typical value is 0.108 W in path1 and 0.110 W in path2.  After finishing adjusting beam splitter, install the positive lens for AOM and adjust the height of positive lens to make the laser beam maintain parallel to the optical table. Figure~\ref{fig:modematching_AOM} is the mode matching result. According to the result, the distance between positive lens and the focus of laser should be 371 mm, and the AOM should be mounted at 710mm position. Figure~\ref{fig:beamprofile_AOM1} and Figure~\ref{fig:beamprofile_AOM2} are the data and the fitting results.
 
 \begin{figure}
 	\begin{center}
-		\includegraphics[width=15cm]{modematching_AOM.eps}
+		\includegraphics[bb=0 0 778 507, width=15cm]{AOM_modematching_Xend.png}
 		\caption{Mode matching for AOM} 
 		\label{fig:modematching_AOM} 
 	\end{center}
@@ -499,7 +552,7 @@ After measuring beam profile, mount the beam splitter, and use power meter to me
 
 \begin{figure}
 	\begin{center}
-		\includegraphics[width=15cm]{path1_with_lens.eps}
+		\includegraphics[bb=20 255 587 611,width=15cm]{AOMmodematchingPath1.pdf}
 		\caption{Beam profile at AOM (Path1)} 
 		\label{fig:beamprofile_AOM1} 
 	\end{center}
@@ -507,21 +560,21 @@ After measuring beam profile, mount the beam splitter, and use power meter to me
 
 \begin{figure}
 	\begin{center}
-		\includegraphics[width=15cm]{path2_with_lens.eps}
+		\includegraphics[bb=20 255 587 611,width=15cm]{AOMmodematchingPath2.pdf}
 		\caption{Beam profile at AOM (Path2)} 
 		\label{fig:beamprofile_AOM2} 
 	\end{center}
 \end{figure}
 
 
-After measuring the beam profile around AOM, install two AOMs at the beam waist for each path. Turn on the laser, send a 1Vdc to AOM by power supply, and adjust the AOM position to enlarge the diffraction efficiency. The largest diffraction efficiency is 93$\%$. Use beam dumper to block the zeroth order beam. Install the polarizer, mirrors, beam sampler, photodetector, integrating sphere. Place a positive lens in front of OFSPD, read the voltage of photodetector by multimeter, and adjust the mirror to enlarge the value. For the mode matching at ETM, place a 1-inch negative lens at 2054mm position, and place a 2-inch positive lens at 2143mm position. The mode matching result is shown in Figure~\ref{fig:modematching_ETM}.
+After measuring the beam profile around AOM, install two AOMs at the beam waist for each path. Turn on the laser, send a 1Vdc to AOM by power supply, and adjust the AOM position to enlarge the diffraction efficiency. The largest diffraction efficiency is 93$\%$. Use beam dumper to block the zeroth order beam. Install the polarizer, mirrors, beam sampler, photodetector, integrating sphere. Place a positive lens in front of OFSPD, read the voltage of photodetector by multimeter, and adjust the mirror to enlarge the value. For the mode matching at ETMX, place a 1-inch negative lens at 1940 mm position, and place a 2-inch positive lenses at 2010 mm and 2080 mm position. The mode matching result is shown in Figure~\ref{fig:modematching_ETM}.
 
 
 
 \begin{figure}
 	\begin{center}
-		\includegraphics[width=15cm]{modematching_ETM.eps}
-		\caption{Mode matching for ETM}
+		\includegraphics[bb=0 0 965 667,width=15cm]{ETMX_modematching_Xend.png}
+		\caption{Mode matching for ETMX}
 		\label{fig:modematching_ETM} 
 	\end{center}
 \end{figure}
@@ -534,7 +587,7 @@ According to the OFS electric circuit, the open loop transfer function of OFS is
 \begin{equation}
 T_{open}=\frac{V_{out}}{V_{in}}=\frac{1}{1+j\omega R_{1}C_{1}}\frac{G}{1+j\omega R_{2}C_{2}}\frac{1+j\omega R_{3}C_{2}}{1+j\omega R_{4}C_{2}}\frac{1}{3(1+j\omega R_{1}C_{1})}
 \end{equation}
-, where $R_{1}=5\mbox{k}\Omega$, $C_{1}=20\mbox{pF}$, $R_{2}=2\mbox{k}\Omega$, $C_{2}=27\mbox{nF}$, $R_{3}=220\Omega$, $R_{4}=2.2\mbox{k}\Omega$. Assuming $\omega\ll R_{1}C_{1}$, the transfer function becomes
+, where $R_{1}=5\mbox{k}\Omega$, $C_{1}=20\mbox{pF}$, $R_{2}=2\mbox{k}\Omega$, $C_{2}=27\mbox{nF}$, $R_{3}=220\Omega$, $R_{4}=2.2\mbox{k}\Omega$. Assuming $\omega\ll 1/R_{1}C_{1}$, the transfer function becomes
 \begin{equation}
 T_{open}=\frac{G}{3}\frac{1+j(f/z_{1})}{(1+j(f/p_{1}))(1+j(f/p_{2}))}
 \end{equation},
@@ -570,6 +623,7 @@ Close the loop, set the OFS gain to 10V, and send 1$\mbox{V}_{\mbox{p-p}}$ signa
 \\\\
 \noindent Measure the open loop and close loop transfer function for both APC and ACC mode, and compare the result to the simulation result.
 
+\begin{comment}
 \subsection{Anti-Imaging Filter measurement}
     \red{What does this sentence means?\\
     signal fidelity above 1 kHz is limited due to the shape of the anti-imaging filters and the desire to roll off the compensation filters close to the Nyquist frequency such that the compensation filters remain stable.
@@ -719,9 +773,9 @@ But when we modulate the power, we created harmonics that we want to keep below 
 We can monitoring the stability of calibration lines by demodulating OFSPD signal with injected calibration lines.
 In KAGRA, we
 
+\end{comment}
 
-
-
+\begin{comment}
 \section{Injection test}
 \red{
 	NOTE: I think the time-delay measurement by sine-gaussian signal should be categorized as "Calibration"\\
@@ -823,6 +877,6 @@ We may prepare all the injection file in the unit of strain. All the issue due t
 
 \subsection{}
 \section{Summary}
-
+\end{comment}
 %----------------------------------------------------------------------------------------
 
